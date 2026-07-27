@@ -3,7 +3,7 @@ The main entry point - this is what GitHub Actions runs every day.
 """
 
 from fetchers.greenhouse import find_candidate_jobs
-from classifier import check_job
+from classifier import check_jobs_batch
 from notifier import send_job_alert
 from seen_jobs import load_seen, save_seen
 
@@ -26,22 +26,25 @@ def main():
 
         print(f"[INFO] Checked {company_name}: {len(candidates)} title match(es)")
 
-        for job in candidates:
-            job_key = job["absolute_url"]
-            if job_key in seen:
-                continue  # already handled this one in a previous run
+        new_candidates = [job for job in candidates if job["absolute_url"] not in seen]
+        if not new_candidates:
+            continue  # nothing new to classify at this company
 
-            try:
-                result = check_job(
-                    title=job["title"],
-                    location=job["location"]["name"],
-                    content=job.get("content", ""),
-                )
-            except Exception as e:
-                print(f"[WARN] Could not classify '{job['title']}' at {company_name}: {e}")
-                continue  # leave it un-seen so we retry it next run
+        try:
+            results = check_jobs_batch([
+                {
+                    "title": job["title"],
+                    "location": job["location"]["name"],
+                    "content": job.get("content", ""),
+                }
+                for job in new_candidates
+            ])
+        except Exception as e:
+            print(f"[WARN] Could not classify jobs at {company_name}: {e}")
+            continue  # leave these un-seen so we retry them next run
 
-            new_seen.add(job_key)
+        for job, result in zip(new_candidates, results):
+            new_seen.add(job["absolute_url"])
 
             if result.get("matches"):
                 send_job_alert(
