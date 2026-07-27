@@ -29,6 +29,8 @@ def main():
             print(f"[WARN] Failed to fetch {company_name}: {e}")
             continue
 
+        print(f"[INFO] Checked {company_name}: {len(candidates)} title match(es)")
+
         for job in candidates:
             job_key = job["absolute_url"]
             if job_key in seen:
