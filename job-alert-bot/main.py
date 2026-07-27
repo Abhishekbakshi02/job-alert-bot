@@ -15,6 +15,7 @@ from seen_jobs import load_seen, save_seen
 # More get added here as you send me the list, one line per company.
 GREENHOUSE_COMPANIES = [
     ("Greenhouse", "greenhouse"),
+    ("NewsBreak", "newsbreak"),
 ]
 
 
