@@ -9,7 +9,9 @@ from seen_jobs import load_seen, save_seen
 
 GREENHOUSE_COMPANIES = [
     ("Greenhouse", "greenhouse"),
+    ("Workable","workable"),
     ("NewsBreak", "newsbreak"),
+    ("QuantumLoopAI","quantumloopai"),
 ]
 
 
