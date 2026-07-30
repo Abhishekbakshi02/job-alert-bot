@@ -2,16 +2,16 @@
 The main entry point - this is what GitHub Actions runs every day.
 """
 
-from fetchers.greenhouse import find_candidate_jobs
+from platform_detector import get_jobs_for_url
 from classifier import check_jobs_batch
 from notifier import send_job_alert
 from seen_jobs import load_seen, save_seen
 
-GREENHOUSE_COMPANIES = [
-    ("Greenhouse", "greenhouse"),
-    ("Workable","workable"),
-    ("NewsBreak", "newsbreak"),
-    ("QuantumLoopAI","quantumloopai"),
+# Just (Display Name, career page URL) - nothing else needed.
+COMPANIES = [
+    ("Greenhouse", "https://job-boards.greenhouse.io/greenhouse"),
+    ("NewsBreak", "https://job-boards.greenhouse.io/newsbreak"),
+    ("QuantumLoopAI", "https://www.quantumloopai.com/careers/open-roles"),
 ]
 
 
@@ -19,9 +19,9 @@ def main():
     seen = load_seen()
     new_seen = set(seen)
 
-    for company_name, board_token in GREENHOUSE_COMPANIES:
+    for company_name, career_url in COMPANIES:
         try:
-            candidates = find_candidate_jobs(board_token)
+            candidates = get_jobs_for_url(career_url)
         except Exception as e:
             print(f"[WARN] Failed to fetch {company_name}: {e}")
             continue
@@ -30,30 +30,23 @@ def main():
 
         new_candidates = [job for job in candidates if job["absolute_url"] not in seen]
         if not new_candidates:
-            continue  # nothing new to classify at this company
+            continue
 
         try:
             results = check_jobs_batch([
-                {
-                    "title": job["title"],
-                    "location": job["location"]["name"],
-                    "content": job.get("content", ""),
-                }
-                for job in new_candidates
+                {"title": j["title"], "location": j["location"]["name"], "content": j.get("content", "")}
+                for j in new_candidates
             ])
         except Exception as e:
             print(f"[WARN] Could not classify jobs at {company_name}: {e}")
-            continue  # leave these un-seen so we retry them next run
+            continue
 
         for job, result in zip(new_candidates, results):
             new_seen.add(job["absolute_url"])
-
             if result.get("matches"):
                 send_job_alert(
-                    title=job["title"],
-                    company=company_name,
-                    location=job["location"]["name"],
-                    url=job["absolute_url"],
+                    title=job["title"], company=company_name,
+                    location=job["location"]["name"], url=job["absolute_url"],
                     reason=result.get("reason", ""),
                 )
                 print(f"[MATCH] Emailed: {job['title']} at {company_name}")
