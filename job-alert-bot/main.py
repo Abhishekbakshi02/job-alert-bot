@@ -39,6 +39,8 @@ COMPANIES = [
     ("Figma", "https://job-boards.greenhouse.io/figma"),
     ("Datadog", "https://job-boards.greenhouse.io/datadog"),
     ("Canva", "https://job-boards.greenhouse.io/canva"),
+    ("Clarium","https://jobs.ashbyhq.com/clarium"),
+    ("TensorOps","https://job-boards.eu.greenhouse.io/tensorops"),
 ]
 
 
