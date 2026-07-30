@@ -1,34 +1,86 @@
 [
-  {"name": "NewsBreak", "url": "https://job-boards.greenhouse.io/newsbreak"},
-  {"name": "QuantumLoopAI", "url": "https://apply.workable.com/quantumloopai/"},
-  {"name": "OpenAI", "url": "https://jobs.ashbyhq.com/openai"},
-  {"name": "Anthropic", "url": "https://jobs.ashbyhq.com/anthropic"},
-  {"name": "ElevenLabs", "url": "https://jobs.ashbyhq.com/elevenlabs"},
-  {"name": "SafetyWing", "url": "https://jobs.ashbyhq.com/safetywing"},
-  {"name": "Supabase", "url": "https://jobs.ashbyhq.com/supabase"},
-  {"name": "Modal", "url": "https://jobs.ashbyhq.com/modal"},
-  {"name": "Render", "url": "https://jobs.ashbyhq.com/render"},
-  {"name": "Tailscale", "url": "https://jobs.ashbyhq.com/tailscale"},
-  {"name": "Ramp", "url": "https://jobs.ashbyhq.com/ramp"},
-  {"name": "Notion", "url": "https://jobs.ashbyhq.com/notion"},
-  {"name": "Retool", "url": "https://jobs.ashbyhq.com/retool"},
-  {"name": "Clay", "url": "https://jobs.ashbyhq.com/clay"},
-  {"name": "Vapi", "url": "https://jobs.ashbyhq.com/vapi"},
-  {"name": "Perplexity", "url": "https://jobs.ashbyhq.com/perplexity-ai"},
-  {"name": "Cursor", "url": "https://jobs.ashbyhq.com/anysphere"},
-  {"name": "Decagon", "url": "https://jobs.ashbyhq.com/decagon"},
-  {"name": "Mercor", "url": "https://jobs.ashbyhq.com/mercor"},
-  {"name": "PostHog", "url": "https://jobs.lever.co/posthog"},
-  {"name": "Smart Working Solutions", "url": "https://jobs.lever.co/smart-working-solutions"},
-  {"name": "H1", "url": "https://jobs.lever.co/h1"},
-  {"name": "Plaid", "url": "https://jobs.lever.co/plaid"},
-  {"name": "Rippling", "url": "https://jobs.lever.co/rippling"},
-  {"name": "Zapier", "url": "https://job-boards.greenhouse.io/zapier"},
-  {"name": "Vercel", "url": "https://job-boards.greenhouse.io/vercel"},
-  {"name": "Stripe", "url": "https://job-boards.greenhouse.io/stripe"},
-  {"name": "Figma", "url": "https://job-boards.greenhouse.io/figma"},
-  {"name": "Datadog", "url": "https://job-boards.greenhouse.io/datadog"},
-  {"name": "Canva", "url": "https://job-boards.greenhouse.io/canva"},
-  {"name": "Ramp", "url": "https://jobs.ashbyhq.com/ramp"},
-  {"name": "TensorOps", "url": "https://job-boards.eu.greenhouse.io/tensorops"}
+  {
+    "name": "NewsBreak",
+    "url": "https://job-boards.greenhouse.io/newsbreak"
+  },
+  {
+    "name": "QuantumLoopAI",
+    "url": "https://apply.workable.com/quantumloopai/"
+  },
+  {
+    "name": "OpenAI",
+    "url": "https://jobs.ashbyhq.com/openai"
+  },
+  {
+    "name": "ElevenLabs",
+    "url": "https://jobs.ashbyhq.com/elevenlabs"
+  },
+  {
+    "name": "Supabase",
+    "url": "https://jobs.ashbyhq.com/supabase"
+  },
+  {
+    "name": "Modal",
+    "url": "https://jobs.ashbyhq.com/modal"
+  },
+  {
+    "name": "Render",
+    "url": "https://jobs.ashbyhq.com/render"
+  },
+  {
+    "name": "Ramp",
+    "url": "https://jobs.ashbyhq.com/ramp"
+  },
+  {
+    "name": "Notion",
+    "url": "https://jobs.ashbyhq.com/notion"
+  },
+  {
+    "name": "Vapi",
+    "url": "https://jobs.ashbyhq.com/vapi"
+  },
+  {
+    "name": "Decagon",
+    "url": "https://jobs.ashbyhq.com/decagon"
+  },
+  {
+    "name": "Mercor",
+    "url": "https://jobs.ashbyhq.com/mercor"
+  },
+  {
+    "name": "Smart Working Solutions",
+    "url": "https://jobs.lever.co/smart-working-solutions"
+  },
+  {
+    "name": "H1",
+    "url": "https://jobs.lever.co/h1"
+  },
+  {
+    "name": "Plaid",
+    "url": "https://jobs.lever.co/plaid"
+  },
+  {
+    "name": "Vercel",
+    "url": "https://job-boards.greenhouse.io/vercel"
+  },
+  {
+    "name": "Stripe",
+    "url": "https://job-boards.greenhouse.io/stripe"
+  },
+  {
+    "name": "Figma",
+    "url": "https://job-boards.greenhouse.io/figma"
+  },
+  {
+    "name": "Datadog",
+    "url": "https://job-boards.greenhouse.io/datadog"
+  },
+  {
+    "name": "Ramp",
+    "url": "https://jobs.ashbyhq.com/ramp"
+  },
+  {
+    "name": "TensorOps",
+    "url": "https://job-boards.eu.greenhouse.io/tensorops"
+  }
 ]
