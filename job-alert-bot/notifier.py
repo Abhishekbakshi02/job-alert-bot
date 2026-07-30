@@ -6,9 +6,9 @@ confirmed as a match.
 import os
 import requests
 
-BREVO_API_KEY = os.environ["BREVO_API_KEY"]
-SENDER_EMAIL = os.environ["SENDER_EMAIL"]  # the address you verified in Brevo
-NOTIFY_EMAIL = os.environ["NOTIFY_EMAIL"]  # the inbox that should receive alerts
+BREVO_API_KEY = os.environ["BREVO_API_KEY"].strip()
+SENDER_EMAIL = os.environ["SENDER_EMAIL"].strip() # the address you verified in Brevo
+NOTIFY_EMAIL = os.environ["NOTIFY_EMAIL"].strip()  # the inbox that should receive alerts
 
 
 def send_job_alert(title: str, company: str, location: str, url: str, reason: str) -> None:
