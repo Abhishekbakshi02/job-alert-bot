@@ -11,6 +11,8 @@ TARGET_TITLE_KEYWORDS = [
     "llm engineer",
     "applied ai",
     "applied ml",
+    "ai/ml engineer",
+    "prompt engineer"
 ]
 
 
