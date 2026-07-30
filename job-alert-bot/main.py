@@ -9,9 +9,36 @@ from seen_jobs import load_seen, save_seen
 
 # Just (Display Name, career page URL) - nothing else needed.
 COMPANIES = [
-    ("Greenhouse", "https://job-boards.greenhouse.io/greenhouse"),
     ("NewsBreak", "https://job-boards.greenhouse.io/newsbreak"),
     ("QuantumLoopAI", "https://apply.workable.com/quantumloopai/"),
+    ("OpenAI", "https://jobs.ashbyhq.com/openai"),
+    ("Anthropic", "https://jobs.ashbyhq.com/anthropic"),
+    ("ElevenLabs", "https://jobs.ashbyhq.com/elevenlabs"),
+    ("SafetyWing", "https://jobs.ashbyhq.com/safetywing"),
+    ("Supabase", "https://jobs.ashbyhq.com/supabase"),
+    ("Modal", "https://jobs.ashbyhq.com/modal"),
+    ("Render", "https://jobs.ashbyhq.com/render"),
+    ("Tailscale", "https://jobs.ashbyhq.com/tailscale"),
+    ("Ramp", "https://jobs.ashbyhq.com/ramp"),
+    ("Notion", "https://jobs.ashbyhq.com/notion"),
+    ("Retool", "https://jobs.ashbyhq.com/retool"),
+    ("Clay", "https://jobs.ashbyhq.com/clay"),
+    ("Vapi", "https://jobs.ashbyhq.com/vapi"),
+    ("Perplexity", "https://jobs.ashbyhq.com/perplexity-ai"),
+    ("Cursor", "https://jobs.ashbyhq.com/anysphere"),
+    ("Decagon", "https://jobs.ashbyhq.com/decagon"),
+    ("Mercor", "https://jobs.ashbyhq.com/mercor"),
+    ("PostHog", "https://jobs.lever.co/posthog"),
+    ("Smart Working Solutions", "https://jobs.lever.co/smart-working-solutions"),
+    ("H1", "https://jobs.lever.co/h1"),
+    ("Plaid", "https://jobs.lever.co/plaid"),
+    ("Rippling", "https://jobs.lever.co/rippling"),
+    ("Zapier", "https://job-boards.greenhouse.io/zapier"),
+    ("Vercel", "https://job-boards.greenhouse.io/vercel"),
+    ("Stripe", "https://job-boards.greenhouse.io/stripe"),
+    ("Figma", "https://job-boards.greenhouse.io/figma"),
+    ("Datadog", "https://job-boards.greenhouse.io/datadog"),
+    ("Canva", "https://job-boards.greenhouse.io/canva"),
 ]
 
 
