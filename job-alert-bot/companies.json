@@ -82,5 +82,12 @@
   {
     "name": "TensorOps",
     "url": "https://job-boards.eu.greenhouse.io/tensorops"
-  }
+  },
+  {"name": "ScaleAI", "url": "https://job-boards.greenhouse.io/scaleai"},
+{"name": "TogetherAI", "url": "https://job-boards.greenhouse.io/togetherai"},
+{"name": "FireworksAI", "url": "https://job-boards.greenhouse.io/fireworksai"},
+{"name": "Runway", "url": "https://job-boards.greenhouse.io/runwayml"},
+{"name": "Harvey", "url": "https://jobs.ashbyhq.com/harvey"},
+{"name": "Baseten", "url": "https://jobs.ashbyhq.com/baseten"},
+{"name": "ElevenLabs", "url": "https://jobs.ashbyhq.com/elevenlabs"}
 ]
