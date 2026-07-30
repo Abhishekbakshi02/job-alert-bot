@@ -11,7 +11,7 @@ from seen_jobs import load_seen, save_seen
 COMPANIES = [
     ("Greenhouse", "https://job-boards.greenhouse.io/greenhouse"),
     ("NewsBreak", "https://job-boards.greenhouse.io/newsbreak"),
-    ("QuantumLoopAI", "https://apply.workable.com/quantumloopai/?lng=en#jobs"),
+    ("QuantumLoopAI", "https://apply.workable.com/quantumloopai"),
 ]
 
 
