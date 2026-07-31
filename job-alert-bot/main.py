@@ -13,8 +13,6 @@ from notifier import send_job_alert
 from seen_jobs import load_seen, save_seen
 from companies import load_companies, save_companies
 from resume_tailor import tailor_resume
-from resume_builder import build_resume_docx
-from resume_tailor import tailor_resume
 from resume_builder import build_resume_pdf
 
 RESUME_DATA_FILE = "resume_data.json"
