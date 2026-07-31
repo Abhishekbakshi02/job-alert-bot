@@ -1,123 +1,95 @@
 """
-Renders resume content (a dict shaped like resume_data.json) into a .docx
-file using ALWAYS the same template - only the content differs per job.
+Renders resume content (a dict shaped like resume_data.json) into a PDF
+using ALWAYS the same template - only the content differs per job.
+Pure-Python (reportlab) - no LibreOffice/system dependency needed, which
+keeps this fast and reliable inside GitHub Actions.
 """
 
-from docx import Document
-from docx.shared import Pt, Inches
-from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_TAB_ALIGNMENT
-from docx.oxml.ns import qn
-from docx.oxml import OxmlElement
+from reportlab.lib.pagesizes import letter
+from reportlab.lib.units import inch
+from reportlab.lib.enums import TA_CENTER
+from reportlab.lib.colors import HexColor
+from reportlab.platypus import (
+    SimpleDocTemplate, Paragraph, Table, TableStyle, HRFlowable,
+)
+from reportlab.lib.styles import ParagraphStyle
+
+DARK = HexColor("#1a1a1a")
+LINE = HexColor("#444444")
+
+NAME_STYLE = ParagraphStyle("name", fontName="Helvetica-Bold", fontSize=17, alignment=TA_CENTER, textColor=DARK, spaceAfter=2)
+CONTACT_STYLE = ParagraphStyle("contact", fontName="Helvetica", fontSize=9, alignment=TA_CENTER, textColor=DARK, spaceAfter=6)
+HEADING_STYLE = ParagraphStyle("heading", fontName="Helvetica-Bold", fontSize=11, textColor=DARK, spaceBefore=5, spaceAfter=1)
+BODY_STYLE = ParagraphStyle("body", fontName="Helvetica", fontSize=9, leading=12, textColor=DARK, spaceAfter=2)
+BULLET_STYLE = ParagraphStyle("bullet", fontName="Helvetica", fontSize=9, leading=12, textColor=DARK, leftIndent=14, spaceAfter=1)
+SUBBULLET_STYLE = ParagraphStyle("subbullet", fontName="Helvetica", fontSize=9, leading=12, textColor=DARK, leftIndent=28, spaceAfter=1)
+TECHSTACK_STYLE = ParagraphStyle("techstack", fontName="Helvetica", fontSize=8.5, leading=11, textColor=DARK, leftIndent=14, spaceAfter=4)
+ENTRY_TITLE_STYLE = ParagraphStyle("entrytitle", fontName="Helvetica-Bold", fontSize=9.5, textColor=DARK)
+ENTRY_DATE_STYLE = ParagraphStyle("entrydate", fontName="Helvetica", fontSize=9.5, textColor=DARK, alignment=2)
 
 
-def _add_bottom_border(paragraph):
-    pPr = paragraph._p.get_or_add_pPr()
-    pBdr = OxmlElement("w:pBdr")
-    bottom = OxmlElement("w:bottom")
-    bottom.set(qn("w:val"), "single")
-    bottom.set(qn("w:sz"), "6")
-    bottom.set(qn("w:space"), "1")
-    bottom.set(qn("w:color"), "444444")
-    pBdr.append(bottom)
-    pPr.append(pBdr)
+def _section_heading(text):
+    return [
+        Paragraph(text, HEADING_STYLE),
+        HRFlowable(width="100%", thickness=0.75, color=LINE, spaceAfter=3),
+    ]
 
 
-def _section_heading(doc, text):
-    p = doc.add_paragraph()
-    p.paragraph_format.space_before = Pt(6)
-    p.paragraph_format.space_after = Pt(2)
-    run = p.add_run(text)
-    run.bold = True
-    run.font.size = Pt(11)
-    _add_bottom_border(p)
+def _entry_row(left_text, right_text):
+    table = Table(
+        [[Paragraph(left_text, ENTRY_TITLE_STYLE), Paragraph(right_text, ENTRY_DATE_STYLE)]],
+        colWidths=[5.3 * inch, 1.7 * inch],
+    )
+    table.setStyle(TableStyle([
+        ("LEFTPADDING", (0, 0), (-1, -1), 0),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+        ("TOPPADDING", (0, 0), (-1, -1), 0),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 2),
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+    ]))
+    return table
 
 
-def _tab_line(doc, left_text, right_text, size=11):
-    p = doc.add_paragraph()
-    p.paragraph_format.tab_stops.add_tab_stop(Inches(7.0), WD_TAB_ALIGNMENT.RIGHT)
-    p.paragraph_format.space_after = Pt(2)
-    run1 = p.add_run(left_text)
-    run1.bold = True
-    run1.font.size = Pt(size)
-    run2 = p.add_run("\t" + right_text)
-    run2.font.size = Pt(size)
+def _tech_stack(label, value):
+    return Paragraph(f"<b>{label}</b> {value}", TECHSTACK_STYLE)
 
 
-def _bullet(doc, text, level=0):
-    p = doc.add_paragraph()
-    bullet_char = "•  " if level == 0 else "◦  "
-    p.paragraph_format.left_indent = Inches(0.25 if level == 0 else 0.5)
-    p.paragraph_format.space_after = Pt(2)
-    run = p.add_run(bullet_char + text)
-    run.font.size = Pt(9)
+def build_resume_pdf(data: dict, output_path: str) -> None:
+    doc = SimpleDocTemplate(
+        output_path, pagesize=letter,
+        topMargin=0.25 * inch, bottomMargin=0.25 * inch,
+        leftMargin=0.45 * inch, rightMargin=0.45 * inch,
+    )
+    story = []
 
+    story.append(Paragraph(data["name"], NAME_STYLE))
+    contact = f"{data['email']}  |  {data['linkedin']}  |  {data['phone']}  |  {data['location']}"
+    story.append(Paragraph(contact, CONTACT_STYLE))
 
-def _tech_stack_line(doc, label, value):
-    p = doc.add_paragraph()
-    p.paragraph_format.left_indent = Inches(0.25)
-    p.paragraph_format.space_after = Pt(4)
-    run1 = p.add_run(label + " ")
-    run1.bold = True
-    run1.font.size = Pt(9)
-    run2 = p.add_run(value)
-    run2.font.size = Pt(9)
+    story += _section_heading("Summary")
+    story.append(Paragraph(data["summary"], BODY_STYLE))
 
-
-def build_resume_docx(data: dict, output_path: str) -> None:
-    doc = Document()
-    for section in doc.sections:
-        section.top_margin = Inches(0.25)
-        section.bottom_margin = Inches(0.25)
-        section.left_margin = Inches(0.4)
-        section.right_margin = Inches(0.4)
-
-    style = doc.styles["Normal"]
-    style.paragraph_format.space_before = Pt(0)
-    style.paragraph_format.space_after = Pt(0)
-    style.paragraph_format.line_spacing = 1.0
-
-    name_p = doc.add_paragraph()
-    name_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    r = name_p.add_run(data["name"])
-    r.bold = True
-    r.font.size = Pt(18)
-
-    contact_p = doc.add_paragraph()
-    contact_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    contact_p.paragraph_format.space_after = Pt(4)
-    contact_p.add_run(
-        f"{data['email']}    {data['linkedin']}    {data['phone']}    {data['location']}"
-    ).font.size = Pt(9)
-
-    _section_heading(doc, "Summary")
-    sp = doc.add_paragraph()
-    sp.paragraph_format.space_after = Pt(2)
-    sp.add_run(data["summary"]).font.size = Pt(9)
-
-    _section_heading(doc, "Technical Skills")
+    story += _section_heading("Technical Skills")
     for skill in data["skills"]:
-        _tech_stack_line(doc, skill["label"] + ":", skill["value"])
+        story.append(Paragraph(f'<b>{skill["label"]}:</b> {skill["value"]}', BODY_STYLE))
 
-    _section_heading(doc, "Experience")
+    story += _section_heading("Experience")
     for job in data["experience"]:
-        _tab_line(doc, f"{job['title']} | {job['company']}", job["dates"])
+        story.append(_entry_row(f"{job['title']} | {job['company']}", job["dates"]))
         for bullet in job["bullets"]:
-            _bullet(doc, bullet, level=0)
-        _tech_stack_line(doc, "Tech Stack Used:", job["techStack"])
+            story.append(Paragraph(f"&#8226;  {bullet}", BULLET_STYLE))
+        story.append(_tech_stack("Tech Stack Used:", job["techStack"]))
 
-    _section_heading(doc, "Projects")
+    story += _section_heading("Projects")
     for proj in data["projects"]:
-        _tab_line(doc, proj["name"], proj["dates"])
+        story.append(_entry_row(proj["name"], proj["dates"]))
         for bullet in proj["bullets"]:
-            _bullet(doc, bullet, level=1)
-        _tech_stack_line(doc, "Tech Stack:", proj["techStack"])
+            story.append(Paragraph(f"&#9702;  {bullet}", SUBBULLET_STYLE))
+        story.append(_tech_stack("Tech Stack:", proj["techStack"]))
 
-    _section_heading(doc, "Education")
+    story += _section_heading("Education")
     edu = data["education"]
-    _tab_line(doc, edu["school"], edu["dates"])
-    edu_p = doc.add_paragraph()
-    edu_p.paragraph_format.tab_stops.add_tab_stop(Inches(7.0), WD_TAB_ALIGNMENT.RIGHT)
-    edu_p.add_run(edu["degree"]).font.size = Pt(9)
-    edu_p.add_run("\t" + edu["gpa"]).font.size = Pt(9)
+    story.append(_entry_row(edu["school"], edu["dates"]))
+    story.append(Paragraph(f'{edu["degree"]}      {edu["gpa"]}', BODY_STYLE))
 
-    doc.save(output_path)
+    doc.build(story)
