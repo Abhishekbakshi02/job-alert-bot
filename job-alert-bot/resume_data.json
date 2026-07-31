@@ -1,0 +1,77 @@
+{
+  "name": "ABHISHEK SHARMA",
+  "email": "abhishek981245@gmail.com",
+  "linkedin": "abhishek-sharma",
+  "phone": "+91 7051912649",
+  "location": "Jammu And Kashmir, India",
+  "summary": "AI Engineer with expertise in machine learning, LLM training, and data analytics, delivering end-to-end AI solutions from model design to deployment. Skilled in training and evaluating large language models (LLMs), fine-tuning machine learning models, and implementing data-driven pipelines. Strong foundation in NLP workflows, data engineering, and performance optimization with hands-on experience deploying AI applications in real-world environments.",
+  "skills": [
+    {"label": "Languages & Frameworks", "value": "Python, Java, Django, HTML, CSS, Bootstrap, SQL"},
+    {"label": "AI & ML", "value": "TensorFlow, PyTorch, Scikit-learn, PySpark, ANN, CNN"},
+    {"label": "LLM Development", "value": "SFT, RLHF, Prompt Engineering, Multi-turn Dialogue Modeling"},
+    {"label": "Data Analysis & Visualization", "value": "Pandas, NumPy, Matplotlib, Seaborn, Power BI"}
+  ],
+  "experience": [
+    {
+      "title": "LLM - Python Engineer",
+      "company": "Turing",
+      "dates": "Sep 2024 - Apr 2025",
+      "bullets": [
+        "Trained and optimized large language models (LLMs) for multi-turn reasoning, code generation, and structured data tasks, improving contextual accuracy and instruction-following ability.",
+        "Built datasets, prompts, and metadata pipelines for LLM training and evaluation to improve response quality and contextual depth.",
+        "Automated data preprocessing and feature engineering pipelines using Pandas, NumPy, and Scikit-learn for scalable model training.",
+        "Designed evaluation frameworks to benchmark LLM performance across token efficiency, latency, and accuracy metrics.",
+        "Debugged and optimized Python, SQL, and ML scripts, improving data processing and model evaluation workflows.",
+        "Worked with noisy and incomplete datasets, making informed decisions on data cleaning, feature selection, model architecture, and training strategies.",
+        "Conducted structured error analysis to identify model weaknesses and guide iterative retraining cycles.",
+        "Created benchmarking frameworks to compare models using accuracy, precision, recall, F1-score, latency, and inference performance."
+      ],
+      "techStack": "Python, PyTorch, TensorFlow, Pandas, NumPy, Scikit-learn, MySQL"
+    },
+    {
+      "title": "Python/Node.js Developer",
+      "company": "CipherByte Technologies (Internship)",
+      "dates": "Apr 2024 - June 2024",
+      "bullets": [
+        "Built data preprocessing pipelines for cleaning, transforming, and validating datasets used in machine learning applications.",
+        "Developed Python scripts to automate feature engineering and dataset preparation for model training and evaluation.",
+        "Implemented REST APIs to integrate machine learning models into backend applications for inference.",
+        "Designed scalable backend modules and optimized SQL queries for efficient data retrieval and processing.",
+        "Built reproducible development environments using Docker for application deployment and testing.",
+        "Performed model evaluation and error analysis to improve prediction quality and overall system performance.",
+        "Collaborated with developers to integrate ML workflows into production-ready applications."
+      ],
+      "techStack": "Python, Django, PostgreSQL, Docker, Pandas, NumPy, Scikit-learn, HTML/CSS, Bootstrap, Postman"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Data Analysis and Forecasting for Local SuperStore (US)",
+      "dates": "June 2026",
+      "bullets": [
+        "Performed exploratory data analysis (EDA) on sales data across regions, products, and payment modes to uncover key business insights.",
+        "Built Python-based ETL pipelines for automated data cleaning, transformation, and feature extraction.",
+        "Designed and built interactive Power BI dashboards to visualize sales trends, customer behavior, and product performance.",
+        "Developed predictive models in Python for 15-day sales forecasting, improving inventory planning and marketing strategy.",
+        "Created SQL queries to extract and transform data for visualization and analytics, ensuring data accuracy and consistency."
+      ],
+      "techStack": "Power BI, Python, Pandas, NumPy, SQL, Matplotlib, Excel"
+    },
+    {
+      "name": "COVID Detection Using Machine Learning",
+      "dates": "Apr 2022 - May 2022",
+      "bullets": [
+        "Developed a machine learning-based system to classify chest radiography images and detect potential COVID-19 cases.",
+        "Applied various data preprocessing techniques and implemented Artificial Neural Networks (ANN) to improve classification accuracy.",
+        "Conducted model benchmarking with accuracy, recall, and F1-score metrics for evaluation."
+      ],
+      "techStack": "Python, TensorFlow, Pandas, NumPy, Matplotlib, Seaborn, Google Colab"
+    }
+  ],
+  "education": {
+    "school": "Jaypee University Of Information Technology, Solan, HP - 173234, India",
+    "degree": "B.Tech Computer Science Engineering (Majors) + ECE (Minor)",
+    "dates": "Jul 2019 - Aug 2023",
+    "gpa": "CGPA: 7.98 (OUT OF 10)"
+  }
+}
