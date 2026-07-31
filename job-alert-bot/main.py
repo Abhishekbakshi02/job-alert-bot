@@ -14,6 +14,8 @@ from seen_jobs import load_seen, save_seen
 from companies import load_companies, save_companies
 from resume_tailor import tailor_resume
 from resume_builder import build_resume_docx
+from resume_tailor import tailor_resume
+from resume_builder import build_resume_pdf
 
 RESUME_DATA_FILE = "resume_data.json"
 RESUME_OUTPUT_DIR = "tailored_resumes"
@@ -79,12 +81,14 @@ def main():
 
             resume_path = None
             try:
-                tailored_content = tailor_resume(resume_data, job["title"], job.get("content", ""))
+                tailor_result = tailor_resume(resume_data, job["title"], job.get("content", ""))
                 resume_path = os.path.join(
                     RESUME_OUTPUT_DIR,
-                    f"Resume_{_safe_filename(company_name)}_{_safe_filename(job['title'])}.docx",
+                    f"Resume_{_safe_filename(company_name)}_{_safe_filename(job['title'])}.pdf",
                 )
-                build_resume_docx(tailored_content, resume_path)
+                build_resume_pdf(tailor_result["resume"], resume_path)
+                print(f"[INFO] Keyword coverage for '{job['title']}': {tailor_result['coverage_percent']}% "
+                      f"({len(tailor_result['matched_keywords'])} of the JD's key requirements matched)")
             except Exception as e:
                 print(f"[WARN] Resume tailoring failed for '{job['title']}' at {company_name}: {e}")
                 resume_path = None
