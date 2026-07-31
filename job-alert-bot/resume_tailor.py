@@ -1,6 +1,8 @@
 """
-Given a confirmed job match, asks Gemini to reorder and reword the
-resume content (never invent) to align with that job's description.
+Given a confirmed job match, asks Gemini to reorder/reword/trim the
+resume content (never invent) to align with that job's description, and
+computes a transparent keyword-coverage percentage against the JD's own
+key requirements.
 """
 
 import os
@@ -13,7 +15,7 @@ GEMINI_API_KEY = os.environ["GEMINI_API_KEY"].strip()
 GEMINI_MODEL = "gemini-3.6-flash"
 GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
 
-TAILOR_PROMPT_TEMPLATE = """You are tailoring a resume for ONE specific job posting.
+TAILOR_PROMPT_TEMPLATE = """You are tailoring a resume for ONE specific job posting, and identifying that job's key requirements.
 
 STRICT RULES - NON-NEGOTIABLE:
 1. NEVER invent a skill, tool, project, achievement, employer, or metric that is not already present in the original resume JSON below.
@@ -21,8 +23,9 @@ STRICT RULES - NON-NEGOTIABLE:
 3. You MAY reorder the "skills" list entries.
 4. You MAY reword a bullet's phrasing to use terminology closer to the job description - but the underlying fact/claim must stay exactly true to the original.
 5. You MAY rewrite the "summary" field freely, as long as every claim in it is still fully supported by the rest of the resume content.
-6. Do NOT change: name, email, linkedin, phone, location, company names, job titles, dates, education, or any techStack string.
-7. Return the COMPLETE resume as JSON in EXACTLY the same structure as given - same keys, same nesting, same number of entries - with only the allowed fields changed.
+6. You MAY OMIT bullets, entire skill categories, or entire projects that are not relevant to this job, to keep the final resume concise (target: fits on 1 page). Omitting is fine; inventing is never fine.
+7. Do NOT omit either of the two "experience" entries - both real jobs must always remain, though their bullets can be trimmed to the most relevant ones (keep at least 3 per job).
+8. Do NOT change: name, email, linkedin, phone, location, company names, job titles, dates, education, or any techStack string for entries you keep.
 
 Candidate's real resume (JSON):
 {resume_json}
@@ -31,11 +34,25 @@ Job Title: {job_title}
 Job Description:
 {job_description}
 
-Return ONLY the complete tailored resume as JSON. No other text, no markdown fences.
+Return ONLY this JSON structure, no other text, no markdown fences:
+{{
+  "tailored_resume": <the tailored resume, same structure as the input resume JSON>,
+  "jd_key_requirements": [<8-15 short strings - the specific skills/tools/requirements this job description asks for, e.g. "RAG", "Python", "3+ years experience">]
+}}
 """
 
 
+def _compute_keyword_coverage(tailored_resume: dict, jd_key_requirements: list) -> tuple:
+    if not jd_key_requirements:
+        return 0, []
+    full_text = json.dumps(tailored_resume).lower()
+    matched = [kw for kw in jd_key_requirements if kw.lower() in full_text]
+    coverage = round(100 * len(matched) / len(jd_key_requirements))
+    return coverage, matched
+
+
 def tailor_resume(resume_data: dict, job_title: str, job_description: str, max_retries: int = 5) -> dict:
+    """Returns {'resume': dict, 'coverage_percent': int, 'matched_keywords': list}"""
     prompt = TAILOR_PROMPT_TEMPLATE.format(
         resume_json=json.dumps(resume_data, indent=2),
         job_title=job_title,
@@ -59,14 +76,17 @@ def tailor_resume(resume_data: dict, job_title: str, job_description: str, max_r
         response.raise_for_status()
         raw_text = response.json()["candidates"][0]["content"]["parts"][0]["text"]
         cleaned = re.sub(r"^```(json)?|```$", "", raw_text.strip(), flags=re.MULTILINE).strip()
-        tailored = json.loads(cleaned)
+        parsed = json.loads(cleaned)
 
-        # Safety net: force these back to the real values regardless of
-        # what Gemini returns, so contact info/education can never drift.
+        tailored = parsed["tailored_resume"]
+        jd_requirements = parsed.get("jd_key_requirements", [])
+
         for locked_field in ("name", "email", "linkedin", "phone", "location", "education"):
             tailored[locked_field] = resume_data[locked_field]
 
+        coverage, matched = _compute_keyword_coverage(tailored, jd_requirements)
+
         time.sleep(2)
-        return tailored
+        return {"resume": tailored, "coverage_percent": coverage, "matched_keywords": matched}
 
     raise RuntimeError("Gemini rate limit persisted while tailoring resume")
