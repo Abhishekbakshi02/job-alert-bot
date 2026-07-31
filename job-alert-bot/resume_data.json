@@ -6,9 +6,10 @@
   "location": "Jammu And Kashmir, India",
   "summary": "AI Engineer with expertise in machine learning, LLM training, and data analytics, delivering end-to-end AI solutions from model design to deployment. Skilled in training and evaluating large language models (LLMs), fine-tuning machine learning models, and implementing data-driven pipelines. Strong foundation in NLP workflows, data engineering, and performance optimization with hands-on experience deploying AI applications in real-world environments.",
   "skills": [
-    {"label": "Languages & Frameworks", "value": "Python, Java, Django, HTML, CSS, Bootstrap, SQL"},
+    {"label": "Languages & Frameworks", "value": "Python, Java, Django, FastAPI, HTML, CSS, Bootstrap, SQL"},
     {"label": "AI & ML", "value": "TensorFlow, PyTorch, Scikit-learn, PySpark, ANN, CNN"},
-    {"label": "LLM Development", "value": "SFT, RLHF, Prompt Engineering, Multi-turn Dialogue Modeling"},
+    {"label": "LLM & RAG Development", "value": "SFT, RLHF, Prompt Engineering, Multi-turn Dialogue Modeling, RAG (Retrieval-Augmented Generation), Vector Databases (ChromaDB)"},
+    {"label": "Voice & Conversational AI", "value": "Speech-to-Text (OpenAI Whisper), Text-to-Speech (OpenAI TTS)"},
     {"label": "Data Analysis & Visualization", "value": "Pandas, NumPy, Matplotlib, Seaborn, Power BI"}
   ],
   "experience": [
