@@ -92,10 +92,6 @@
     "url": "https://job-boards.greenhouse.io/togetherai"
   },
   {
-    "name": "FireworksAI",
-    "url": "https://job-boards.greenhouse.io/fireworksai"
-  },
-  {
     "name": "Harvey",
     "url": "https://jobs.ashbyhq.com/harvey"
   },
@@ -107,6 +103,8 @@
     "name": "ElevenLabs",
     "url": "https://jobs.ashbyhq.com/elevenlabs"
   },
-  {"name": "Sarvam AI", "url": "https://jobs.ashbyhq.com/sarvam"}
-  
+  {
+    "name": "Sarvam AI",
+    "url": "https://jobs.ashbyhq.com/sarvam"
+  }
 ]
