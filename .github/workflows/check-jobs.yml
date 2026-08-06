@@ -31,6 +31,7 @@ jobs:
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
           SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
           NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+          PYTHONUNBUFFERED: "1"
         run: python main.py
 
       - name: Save updated "already seen" list
