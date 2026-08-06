@@ -1,8 +1,9 @@
 """
-Sends ALL of one company's candidate jobs to Gemini in a SINGLE call and
-asks it to judge each one against the two hard filters: experience level
-and location. This keeps API usage low even at 500 companies, since most
-companies contribute zero or one call total, not one call per job.
+Sends a company's candidate jobs to Gemini for classification against
+the experience/location filters. Large batches are automatically split
+into smaller chunks (MAX_JOBS_PER_BATCH each) so no single request gets
+too big and slow - a company with 19 matches makes 4 fast calls instead
+of 1 huge, unpredictably slow one.
 """
 
 import os
@@ -14,6 +15,8 @@ import requests
 GEMINI_API_KEY = os.environ["GEMINI_API_KEY"].strip()
 GEMINI_MODEL = "gemini-3.6-flash"
 GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
+
+MAX_JOBS_PER_BATCH = 6
 
 BATCH_PROMPT_TEMPLATE = """You are screening {count} job postings against two STRICT requirements. Respond using ONLY a JSON array, no other text before or after it - one object per job, IN THE SAME ORDER as given below.
 
@@ -30,15 +33,7 @@ Respond with ONLY a JSON array of exactly {count} objects, in the same order as 
 """
 
 
-def check_jobs_batch(jobs: list[dict], max_retries: int = 5) -> list[dict]:
-    """
-    jobs: list of {"title": str, "location": str, "content": str}
-    Returns a list of {"matches": bool, "reason": str}, same order as input.
-    Makes ONE Gemini call for the whole list, not one call per job.
-    """
-    if not jobs:
-        return []
-
+def _classify_chunk(jobs: list[dict], max_retries: int) -> list[dict]:
     jobs_text = "\n\n".join(
         f"--- Job {i + 1} ---\n"
         f"Title: {job['title']}\n"
@@ -62,6 +57,13 @@ def check_jobs_batch(jobs: list[dict], max_retries: int = 5) -> list[dict]:
             time.sleep(wait_seconds)
             continue
 
+        if response.status_code in (500, 502, 503, 504):
+            wait_seconds = 10 * (attempt + 1)
+            print(f"[INFO] Gemini returned {response.status_code} (temporary issue), "
+                  f"waiting {wait_seconds}s (retry {attempt + 1}/{max_retries})")
+            time.sleep(wait_seconds)
+            continue
+
         response.raise_for_status()
         raw_text = response.json()["candidates"][0]["content"]["parts"][0]["text"]
         cleaned = re.sub(r"^```(json)?|```$", "", raw_text.strip(), flags=re.MULTILINE).strip()
@@ -70,7 +72,19 @@ def check_jobs_batch(jobs: list[dict], max_retries: int = 5) -> list[dict]:
         if len(results) != len(jobs):
             raise ValueError(f"Expected {len(jobs)} results back, got {len(results)}")
 
-        time.sleep(2)  # light pause between companies, not between individual jobs
+        time.sleep(2)
         return results
 
-    raise RuntimeError(f"Gemini rate limit persisted after {max_retries} retries")
+    raise RuntimeError(f"Gemini call failed after {max_retries} retries")
+
+
+def check_jobs_batch(jobs: list[dict], max_retries: int = 5) -> list[dict]:
+    """Automatically splits into chunks of at most MAX_JOBS_PER_BATCH."""
+    if not jobs:
+        return []
+
+    all_results = []
+    for start in range(0, len(jobs), MAX_JOBS_PER_BATCH):
+        chunk = jobs[start:start + MAX_JOBS_PER_BATCH]
+        all_results.extend(_classify_chunk(chunk, max_retries))
+    return all_results
