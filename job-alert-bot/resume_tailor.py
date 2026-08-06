@@ -23,8 +23,7 @@ STRICT RULES - NON-NEGOTIABLE:
 3. You MAY reorder the "skills" list entries.
 4. You MAY reword a bullet's phrasing to use terminology closer to the job description - but the underlying fact/claim must stay exactly true to the original.
 5. You MAY rewrite the "summary" field freely, as long as every claim in it is still fully supported by the rest of the resume content.
-6. You MAY OMIT bullets, entire skill categories, or entire projects that are not relevant to this job, to keep the final resume concise (target: fits on 1 page). Omitting is fine; inventing is never fine.
-7. Do NOT omit either of the two "experience" entries - both real jobs must always remain, though their bullets can be trimmed to the most relevant ones (keep at least 3 per job).
+7. Do NOT omit either of the two "experience" entries - both real jobs must always remain. Aim for 4-5 of the most relevant bullets per job (never fewer than 3) - enough to fill the page well, not just the bare minimum.
 8. Do NOT change: name, email, linkedin, phone, location, company names, job titles, dates, education, or any techStack string for entries you keep.
 
 Candidate's real resume (JSON):
