@@ -46,7 +46,7 @@ def _compute_keyword_coverage(tailored_resume: dict, jd_key_requirements: list) 
     return coverage, matched
 
 
-def tailor_resume(resume_data: dict, job_title: str, job_description: str, max_retries: int = 2) -> dict:
+def tailor_resume(resume_data: dict, job_title: str, job_description: str, max_retries: int = 5) -> dict:
     prompt = TAILOR_PROMPT_TEMPLATE.format(
         resume_json=json.dumps(resume_data, indent=2),
         job_title=job_title,
