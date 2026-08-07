@@ -28,7 +28,7 @@ Respond with ONLY a JSON array of exactly {count} objects, in the same order as 
 """
 
 
-def _classify_chunk(jobs: list[dict], max_retries: int = 2) -> list[dict]:
+def _classify_chunk(jobs: list[dict], max_retries: int = 5) -> list[dict]:
     jobs_text = "\n\n".join(
         f"--- Job {i + 1} ---\n"
         f"Title: {job['title']}\n"
@@ -48,7 +48,7 @@ def _classify_chunk(jobs: list[dict], max_retries: int = 2) -> list[dict]:
     return results
 
 
-def check_jobs_batch(jobs: list[dict], max_retries: int = 2) -> list[dict]:
+def check_jobs_batch(jobs: list[dict], max_retries: int = 5) -> list[dict]:
     if not jobs:
         return []
 
