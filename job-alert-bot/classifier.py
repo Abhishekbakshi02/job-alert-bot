@@ -1,20 +1,15 @@
 """
-Sends a company's candidate jobs to Gemini for classification against
+Sends a company's candidate jobs to the LLM for classification against
 the experience/location filters. Large batches are automatically split
 into smaller chunks (MAX_JOBS_PER_BATCH each) so no single request gets
-too big and slow - a company with 19 matches makes 4 fast calls instead
-of 1 huge, unpredictably slow one.
+too big and slow. Uses llm_client's multi-provider fallback chain, so
+one provider's daily quota running out doesn't stall the whole run.
 """
 
-import os
 import re
 import json
-import time
-import requests
 
-GEMINI_API_KEY = os.environ["GEMINI_API_KEY"].strip()
-GEMINI_MODEL = "gemini-3.6-flash"
-GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
+from llm_client import call_llm
 
 MAX_JOBS_PER_BATCH = 6
 
@@ -33,7 +28,7 @@ Respond with ONLY a JSON array of exactly {count} objects, in the same order as 
 """
 
 
-def _classify_chunk(jobs: list[dict], max_retries: int) -> list[dict]:
+def _classify_chunk(jobs: list[dict], max_retries: int = 2) -> list[dict]:
     jobs_text = "\n\n".join(
         f"--- Job {i + 1} ---\n"
         f"Title: {job['title']}\n"
@@ -43,43 +38,17 @@ def _classify_chunk(jobs: list[dict], max_retries: int) -> list[dict]:
     )
     prompt = BATCH_PROMPT_TEMPLATE.format(count=len(jobs), jobs_text=jobs_text)
 
-    for attempt in range(max_retries):
-        response = requests.post(
-            GEMINI_URL,
-            headers={"x-goog-api-key": GEMINI_API_KEY, "Content-Type": "application/json"},
-            json={"contents": [{"parts": [{"text": prompt}]}]},
-            timeout=60,
-        )
+    raw_text = call_llm(prompt, max_retries=max_retries)
+    cleaned = re.sub(r"^```(json)?|```$", "", raw_text.strip(), flags=re.MULTILINE).strip()
+    results = json.loads(cleaned)
 
-        if response.status_code == 429:
-            wait_seconds = 15 * (attempt + 1)
-            print(f"[INFO] Gemini rate limit hit, waiting {wait_seconds}s (retry {attempt + 1}/{max_retries})")
-            time.sleep(wait_seconds)
-            continue
+    if len(results) != len(jobs):
+        raise ValueError(f"Expected {len(jobs)} results back, got {len(results)}")
 
-        if response.status_code in (500, 502, 503, 504):
-            wait_seconds = 10 * (attempt + 1)
-            print(f"[INFO] Gemini returned {response.status_code} (temporary issue), "
-                  f"waiting {wait_seconds}s (retry {attempt + 1}/{max_retries})")
-            time.sleep(wait_seconds)
-            continue
-
-        response.raise_for_status()
-        raw_text = response.json()["candidates"][0]["content"]["parts"][0]["text"]
-        cleaned = re.sub(r"^```(json)?|```$", "", raw_text.strip(), flags=re.MULTILINE).strip()
-        results = json.loads(cleaned)
-
-        if len(results) != len(jobs):
-            raise ValueError(f"Expected {len(jobs)} results back, got {len(results)}")
-
-        time.sleep(2)
-        return results
-
-    raise RuntimeError(f"Gemini call failed after {max_retries} retries")
+    return results
 
 
-def check_jobs_batch(jobs: list[dict], max_retries: int = 5) -> list[dict]:
-    """Automatically splits into chunks of at most MAX_JOBS_PER_BATCH."""
+def check_jobs_batch(jobs: list[dict], max_retries: int = 2) -> list[dict]:
     if not jobs:
         return []
 
