@@ -17,16 +17,16 @@ from gemini_errors import GeminiUnavailable
 
 PROVIDERS = [
     {
-        "name": "Groq",
-        "url": "https://api.groq.com/openai/v1/chat/completions",
-        "api_key_env": "GROQ_API_KEY",
-        "model": "openai/gpt-oss-120b",
-    },
-    {
         "name": "Gemini",
         "url": "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
         "api_key_env": "GEMINI_API_KEY",
         "model": "gemini-3.6-flash",
+    },
+    {
+        "name": "Groq",
+        "url": "https://api.groq.com/openai/v1/chat/completions",
+        "api_key_env": "GROQ_API_KEY",
+        "model": "openai/gpt-oss-120b",
     },
 ]
 
@@ -67,7 +67,7 @@ def _call_one_provider(provider: dict, prompt: str, max_retries: int) -> str:
     raise GeminiUnavailable(f"{provider['name']} failed after {max_retries} retries")
 
 
-def call_llm(prompt: str, max_retries: int = 2) -> str:
+def call_llm(prompt: str, max_retries: int = 5) -> str:
     errors = []
     for provider in PROVIDERS:
         try:
