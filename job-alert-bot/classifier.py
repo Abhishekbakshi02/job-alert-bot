@@ -9,7 +9,7 @@ one provider's daily quota running out doesn't stall the whole run.
 import re
 import json
 
-from llm_client import call_llm
+from llm_client import call_llm, CLASSIFY_PROVIDERS
 
 MAX_JOBS_PER_BATCH = 6
 
@@ -38,7 +38,7 @@ def _classify_chunk(jobs: list[dict], max_retries: int = 5) -> list[dict]:
     )
     prompt = BATCH_PROMPT_TEMPLATE.format(count=len(jobs), jobs_text=jobs_text)
 
-    raw_text = call_llm(prompt, max_retries=max_retries)
+    raw_text = call_llm(prompt, providers=CLASSIFY_PROVIDERS, max_retries=max_retries)
     cleaned = re.sub(r"^```(json)?|```$", "", raw_text.strip(), flags=re.MULTILINE).strip()
     results = json.loads(cleaned)
 
