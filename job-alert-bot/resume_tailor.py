@@ -8,7 +8,7 @@ key requirements. Uses llm_client's multi-provider fallback chain.
 import re
 import json
 
-from llm_client import call_llm
+from llm_client import call_llm, TAILOR_PROVIDERS
 
 TAILOR_PROMPT_TEMPLATE = """You are tailoring a resume for ONE specific job posting, and identifying that job's key requirements.
 
@@ -53,7 +53,7 @@ def tailor_resume(resume_data: dict, job_title: str, job_description: str, max_r
         job_description=job_description[:6000],
     )
 
-    raw_text = call_llm(prompt, max_retries=max_retries)
+    raw_text = call_llm(prompt, providers=TAILOR_PROVIDERS, max_retries=max_retries)
     cleaned = re.sub(r"^```(json)?|```$", "", raw_text.strip(), flags=re.MULTILINE).strip()
     parsed = json.loads(cleaned)
 
