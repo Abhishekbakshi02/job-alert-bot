@@ -4,8 +4,7 @@ precise pixel-measured template in resume_template.py. Keeps
 resume_tailor.py's tested prompt/schema completely unchanged - this is
 the only place that knows about the template's specific field names.
 """
-
-from resume_template import render_resume
+from latex_renderer import render_resume
 
 
 def _adapt(resume: dict) -> dict:
