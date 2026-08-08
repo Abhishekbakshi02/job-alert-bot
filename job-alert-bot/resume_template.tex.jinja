@@ -1,0 +1,189 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[
+left=0.44in,
+right=0.44in,
+top=0.20in,
+bottom=0.30in
+]{geometry}
+
+\usepackage{enumitem}
+\usepackage{fontspec}
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+
+\setmainfont{Liberation Sans}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\begin{center}
+
+{\fontsize{14.2pt}{14.2pt}\selectfont
+\bfseries
+\VAR{name}
+}
+
+\vspace{-1pt}
+
+\end{center}
+
+{\fontsize{8pt}{8pt}\selectfont
+
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llll}
+
+\faEnvelope\hspace{2pt}\href{mailto:\VAR{email}}{\VAR{email}}
+&
+\faGithub\hspace{2pt}\underline{\VAR{linkedin}}
+&
+\faPhone\hspace{2pt}\VAR{phone}
+&
+\faMapMarker*\hspace{2pt}\VAR{location}
+
+\end{tabular*}
+
+}
+
+\vspace{4pt}
+
+{\fontsize{11pt}{11pt}\selectfont\bfseries Summary}
+
+\vspace{-7pt}
+
+\noindent\rule{\textwidth}{0.4pt}
+
+\vspace{1pt}
+
+{\fontsize{9pt}{12pt}\selectfont
+
+\VAR{summary}
+
+}
+
+\vspace{3pt}
+
+{\fontsize{11pt}{11pt}\selectfont\bfseries Technical Skills}
+
+\vspace{-7pt}
+
+\noindent\rule{\textwidth}{0.4pt}
+
+\vspace{1pt}
+
+{\fontsize{9pt}{12pt}\selectfont
+
+\BLOCK{for skill in skills}
+\textbf{\VAR{skill.label}:}
+\VAR{skill.value}
+
+\vspace{3pt}
+
+\BLOCK{endfor}
+}
+
+\vspace{3pt}
+
+{\fontsize{11pt}{11pt}\selectfont\bfseries Experience}
+
+\vspace{-7pt}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{-9pt}
+
+\BLOCK{for job in experience}
+\noindent
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+{\fontsize{10pt}{10pt}\selectfont\bfseries \VAR{job.title}}
+&
+{\fontsize{9pt}{9pt}\selectfont\bfseries \VAR{job.dates}}
+\end{tabular*}
+
+\vspace{0pt}
+
+{\fontsize{9pt}{12pt}\selectfont
+
+\begin{itemize}[leftmargin=14pt,labelsep=3pt,itemsep=-1pt,topsep=0pt]
+
+\BLOCK{for bullet in job.bullets}
+\item \VAR{bullet}
+
+\BLOCK{endfor}
+\item \textbf{Tech Stack Used:} \VAR{job.tech_stack}
+
+\end{itemize}
+
+}
+
+\vspace{5pt}
+
+\BLOCK{endfor}
+
+{\fontsize{11pt}{11pt}\selectfont\bfseries Projects}
+
+\vspace{-7pt}
+\noindent\rule{\textwidth}{0.4pt}
+
+\vspace{4pt}
+
+\BLOCK{for proj in projects}
+\noindent
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+{\fontsize{10pt}{10pt}\selectfont\bfseries \VAR{proj.title}}
+&
+{\fontsize{9pt}{9pt}\selectfont\bfseries \VAR{proj.dates}}
+\end{tabular*}
+
+\vspace{2pt}
+
+{\fontsize{9pt}{12pt}\selectfont
+
+\begin{itemize}[leftmargin=14pt,labelsep=3pt,itemsep=-1pt,topsep=0pt]
+
+\BLOCK{for bullet in proj.bullets}
+\item \VAR{bullet}
+
+\BLOCK{endfor}
+\item \textbf{Tech Stack:} \VAR{proj.tech_stack}
+
+\end{itemize}
+
+}
+
+\vspace{5pt}
+
+\BLOCK{endfor}
+
+{\fontsize{11pt}{11pt}\selectfont\bfseries Education}
+
+\vspace{-3pt}
+\noindent\rule{\textwidth}{0.4pt}
+
+\vspace{4pt}
+
+\BLOCK{for edu in education}
+\noindent
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+
+{\fontsize{10pt}{10pt}\selectfont\bfseries
+\VAR{edu.institute}}
+
+&
+{\fontsize{9pt}{9pt}\selectfont\bfseries \VAR{edu.dates}}
+
+\end{tabular*}
+
+\vspace{2pt}
+
+{\fontsize{9pt}{11pt}\selectfont
+\textbf{\VAR{edu.degree}}
+\hfill
+\textbf{\VAR{edu.extra}}
+}
+
+\vspace{2pt}
+
+\BLOCK{endfor}
+
+\end{document}
