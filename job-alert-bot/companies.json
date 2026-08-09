@@ -395,54 +395,190 @@
     "name": "DeepMind",
     "url": "https://job-boards.greenhouse.io/deepmind"
   },
-  
-  {"name": "Sigmoid", "url": "https://job-boards.greenhouse.io/sigmoid"},
-  {"name": "Tredence", "url": "https://jobs.smartrecruiters.com/tredenceanalytic"},
-  {"name": "Fractal Analytics", "url": "https://careers.smartrecruiters.com/FractalAnalytics"},
-  {"name": "Tiger Analytics", "url": "https://apply.workable.com/tiger-analytics/"},
-  {"name": "Druva", "url": "https://www.druva.com/why-druva/explore/careers/jobs/"},
-  {"name": "Freshworks", "url": "https://jobs.smartrecruiters.com/Freshworks"},
-  {"name": "Appsmith", "url": "https://jobs.ashbyhq.com/appsmith"},
-  {"name": "Mindtickle", "url": "https://careers.smartrecruiters.com/MindTickle"},
-  {"name": "Dozee", "url": "https://jobs.lever.co/dozee"},
-  {"name": "Apollo.io", "url": "https://job-boards.greenhouse.io/apolloio"},
-  {"name": "Grafana Labs", "url": "https://job-boards.greenhouse.io/grafanalabs"},
-  {"name": "Canonical", "url": "https://job-boards.greenhouse.io/canonical"},
-  {"name": "Automattic", "url": "https://job-boards.greenhouse.io/automatticcareers"},
-  {"name": "Vernacular.ai", "url": "https://careers.smartrecruiters.com/Vernacularai"},
-  {"name": "Meesho", "url": "https://jobs.lever.co/meesho"},
-  {"name": "Dream Sports", "url": "https://jobs.lever.co/dreamsports"},
-  {"name": "Pippin Technologies India", "url": "https://job-boards.greenhouse.io/pippintitleindia"},
-  {"name": "Baya Systems", "url": "https://job-boards.greenhouse.io/bayasystems"},
-  {"name": "Skild AI", "url": "https://job-boards.greenhouse.io/skildai-careers"},
-  {"name": "Eurofins", "url": "https://careers.smartrecruiters.com/Eurofins"},
-  {"name": "Renesas Electronics", "url": "https://careers.smartrecruiters.com/RenesasElectronics"},
-  {"name": "Version 1", "url": "https://careers.smartrecruiters.com/Version1"},
-  {"name": "Nexthink", "url": "https://jobs.smartrecruiters.com/Nexthink"},
-  {"name": "SingleStore", "url": "https://job-boards.greenhouse.io/singlestore"},
-  {"name": "Atlan", "url": "https://jobs.ashbyhq.com/atlan"},
-  {"name": "Harvey", "url": "https://jobs.ashbyhq.com/harvey"},
-  {"name": "Juniper Square", "url": "https://jobs.ashbyhq.com/junipersquare"},
-  {"name": "Conga", "url": "https://job-boards.greenhouse.io/conga"},
-  {"name": "Alterra Digital Health", "url": "https://job-boards.greenhouse.io/alteradigitalhealthindia"},
-  {"name": "Sama", "url": "https://job-boards.greenhouse.io/samainc"},
-  {"name": "Presto", "url": "https://jobs.lever.co/prestolabs"},
-  {"name": "Houzz", "url": "https://jobs.lever.co/houzz"},
-  {"name": "Airbyte", "url": "https://jobs.ashbyhq.com/airbyte"},
-  {"name": "FamPay", "ats": "Lever", "url": "https://jobs.lever.co/fampay"},
-  {"name": "IDT Corporation", "ats": "Lever", "url": "https://jobs.lever.co/idt"},
-  {"name": "T-Systems ICT India", "ats": "SmartRecruiters", "url": "https://careers.smartrecruiters.com/T-SystemsICTIndiaPvtLtd1"},
-  {"name": "Kong", "ats": "Ashby", "url": "https://jobs.ashbyhq.com/kong"},
-  {"name": "The Trade Desk", "ats": "Greenhouse", "url": "https://job-boards.greenhouse.io/thetradedesk"},
-  {"name": "BitGo", "ats": "Greenhouse", "url": "https://job-boards.greenhouse.io/bitgo"},
-  {"name": "Instawork", "ats": "Greenhouse", "url": "https://job-boards.greenhouse.io/instawork"},
-  {"name": "ASAPP", "ats": "Lever", "url": "https://jobs.lever.co/asapp-2"},
-  {"name": "Astronomer", "ats": "Ashby", "url": "https://jobs.ashbyhq.com/astronomer"},
-  {"name": "Hinge Health", "ats": "Ashby", "url": "https://jobs.ashbyhq.com/hinge-health"},
-  {"name": "ConnectWise", "ats": "Greenhouse", "url": "https://job-boards.greenhouse.io/connectwise"},
-  {"name": "Quince", "ats": "Greenhouse", "url": "https://job-boards.greenhouse.io/quince"},
-  {"name": "Saronic Technologies", "ats": "Ashby", "url": "https://jobs.ashbyhq.com/saronic"},
-  {"name": "Bluevine", "ats": "Greenhouse", "url": "https://job-boards.greenhouse.io/bluevineindia"}
-    
-
+  {
+    "name": "Sigmoid",
+    "url": "https://job-boards.greenhouse.io/sigmoid"
+  },
+  {
+    "name": "Tredence",
+    "url": "https://jobs.smartrecruiters.com/tredenceanalytic"
+  },
+  {
+    "name": "Fractal Analytics",
+    "url": "https://careers.smartrecruiters.com/FractalAnalytics"
+  },
+  {
+    "name": "Tiger Analytics",
+    "url": "https://apply.workable.com/tiger-analytics/"
+  },
+  {
+    "name": "Freshworks",
+    "url": "https://jobs.smartrecruiters.com/Freshworks"
+  },
+  {
+    "name": "Mindtickle",
+    "url": "https://careers.smartrecruiters.com/MindTickle"
+  },
+  {
+    "name": "Dozee",
+    "url": "https://jobs.lever.co/dozee"
+  },
+  {
+    "name": "Apollo.io",
+    "url": "https://job-boards.greenhouse.io/apolloio"
+  },
+  {
+    "name": "Grafana Labs",
+    "url": "https://job-boards.greenhouse.io/grafanalabs"
+  },
+  {
+    "name": "Canonical",
+    "url": "https://job-boards.greenhouse.io/canonical"
+  },
+  {
+    "name": "Automattic",
+    "url": "https://job-boards.greenhouse.io/automatticcareers"
+  },
+  {
+    "name": "Vernacular.ai",
+    "url": "https://careers.smartrecruiters.com/Vernacularai"
+  },
+  {
+    "name": "Meesho",
+    "url": "https://jobs.lever.co/meesho"
+  },
+  {
+    "name": "Pippin Technologies India",
+    "url": "https://job-boards.greenhouse.io/pippintitleindia"
+  },
+  {
+    "name": "Baya Systems",
+    "url": "https://job-boards.greenhouse.io/bayasystems"
+  },
+  {
+    "name": "Skild AI",
+    "url": "https://job-boards.greenhouse.io/skildai-careers"
+  },
+  {
+    "name": "Eurofins",
+    "url": "https://careers.smartrecruiters.com/Eurofins"
+  },
+  {
+    "name": "Renesas Electronics",
+    "url": "https://careers.smartrecruiters.com/RenesasElectronics"
+  },
+  {
+    "name": "Version 1",
+    "url": "https://careers.smartrecruiters.com/Version1"
+  },
+  {
+    "name": "Nexthink",
+    "url": "https://jobs.smartrecruiters.com/Nexthink"
+  },
+  {
+    "name": "SingleStore",
+    "url": "https://job-boards.greenhouse.io/singlestore"
+  },
+  {
+    "name": "Atlan",
+    "url": "https://jobs.ashbyhq.com/atlan"
+  },
+  {
+    "name": "Harvey",
+    "url": "https://jobs.ashbyhq.com/harvey"
+  },
+  {
+    "name": "Juniper Square",
+    "url": "https://jobs.ashbyhq.com/junipersquare"
+  },
+  {
+    "name": "Conga",
+    "url": "https://job-boards.greenhouse.io/conga"
+  },
+  {
+    "name": "Sama",
+    "url": "https://job-boards.greenhouse.io/samainc"
+  },
+  {
+    "name": "Presto",
+    "url": "https://jobs.lever.co/prestolabs"
+  },
+  {
+    "name": "Houzz",
+    "url": "https://jobs.lever.co/houzz"
+  },
+  {
+    "name": "Airbyte",
+    "url": "https://jobs.ashbyhq.com/airbyte"
+  },
+  {
+    "name": "FamPay",
+    "ats": "Lever",
+    "url": "https://jobs.lever.co/fampay"
+  },
+  {
+    "name": "IDT Corporation",
+    "ats": "Lever",
+    "url": "https://jobs.lever.co/idt"
+  },
+  {
+    "name": "T-Systems ICT India",
+    "ats": "SmartRecruiters",
+    "url": "https://careers.smartrecruiters.com/T-SystemsICTIndiaPvtLtd1"
+  },
+  {
+    "name": "Kong",
+    "ats": "Ashby",
+    "url": "https://jobs.ashbyhq.com/kong"
+  },
+  {
+    "name": "The Trade Desk",
+    "ats": "Greenhouse",
+    "url": "https://job-boards.greenhouse.io/thetradedesk"
+  },
+  {
+    "name": "BitGo",
+    "ats": "Greenhouse",
+    "url": "https://job-boards.greenhouse.io/bitgo"
+  },
+  {
+    "name": "Instawork",
+    "ats": "Greenhouse",
+    "url": "https://job-boards.greenhouse.io/instawork"
+  },
+  {
+    "name": "ASAPP",
+    "ats": "Lever",
+    "url": "https://jobs.lever.co/asapp-2"
+  },
+  {
+    "name": "Astronomer",
+    "ats": "Ashby",
+    "url": "https://jobs.ashbyhq.com/astronomer"
+  },
+  {
+    "name": "Hinge Health",
+    "ats": "Ashby",
+    "url": "https://jobs.ashbyhq.com/hinge-health"
+  },
+  {
+    "name": "ConnectWise",
+    "ats": "Greenhouse",
+    "url": "https://job-boards.greenhouse.io/connectwise"
+  },
+  {
+    "name": "Quince",
+    "ats": "Greenhouse",
+    "url": "https://job-boards.greenhouse.io/quince"
+  },
+  {
+    "name": "Saronic Technologies",
+    "ats": "Ashby",
+    "url": "https://jobs.ashbyhq.com/saronic"
+  },
+  {
+    "name": "Bluevine",
+    "ats": "Greenhouse",
+    "url": "https://job-boards.greenhouse.io/bluevineindia"
+  }
 ]
