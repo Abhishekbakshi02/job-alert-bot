@@ -1,6 +1,7 @@
 """
 Sends the actual notification email via Brevo once a job has been
-confirmed as a match - optionally with a tailored resume attached.
+confirmed as a match - optionally with a tailored resume attached, and
+optionally with AI-answered application questions included in the body.
 """
 
 import os
@@ -12,7 +13,18 @@ SENDER_EMAIL = os.environ["SENDER_EMAIL"].strip()
 NOTIFY_EMAIL = os.environ["NOTIFY_EMAIL"].strip()
 
 
-def send_job_alert(title: str, company: str, location: str, url: str, reason: str, resume_path: str = None) -> None:
+def _answers_html(application_answers: list) -> str:
+    if not application_answers:
+        return ""
+    items = "".join(
+        f"<p><b>Q: {qa['question']}</b><br>{qa['answer']}</p>"
+        for qa in application_answers
+    )
+    return f"<hr><p><b>This posting included application questions - draft answers:</b></p>{items}"
+
+
+def send_job_alert(title: str, company: str, location: str, url: str, reason: str,
+                    resume_path: str = None, application_answers: list = None) -> None:
     payload = {
         "sender": {"email": SENDER_EMAIL, "name": "Job Alert Bot"},
         "to": [{"email": NOTIFY_EMAIL}],
@@ -24,6 +36,7 @@ def send_job_alert(title: str, company: str, location: str, url: str, reason: st
             f"Why it matched: {reason}</p>"
             f'<p><a href="{url}">View the listing</a></p>'
             + ("<p>A tailored resume for this role is attached.</p>" if resume_path else "")
+            + _answers_html(application_answers or [])
         ),
     }
 
