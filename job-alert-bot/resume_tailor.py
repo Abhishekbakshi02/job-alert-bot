@@ -1,22 +1,23 @@
 """
 Given a confirmed job match, asks the LLM to:
-1. Tailor the resume (summary, experience selection, and projects chosen
-   fresh from the knowledge base) to the job description.
-2. Answer any explicit application questions found IN the job
-   description text itself (not a separate application form - see the
-   module docstring note below on that distinction).
-3. Compute a transparent keyword-coverage percentage against the JD's
-   own key requirements.
+1. Tailor the resume (summary, experience bullet selection, and
+   projects chosen fresh from the knowledge base) to the job.
+2. Answer any explicit application questions found in the job
+   description text itself.
+3. Compute a transparent keyword-coverage percentage.
 
-Uses llm_client's multi-provider fallback chain.
+Token-efficiency design: the model is NEVER asked to generate fields
+that are locked/unchanged anyway (name, email, phone, education, job
+titles/companies/dates/techStack) - those get merged back from the real
+resume_data in code. This keeps the response short enough to reliably
+avoid truncation, since a shorter required output is less likely to
+ever hit a token ceiling in the first place - not just a higher ceiling
+to hope stays big enough.
 
-NOTE on application questions: this only catches questions written
-directly into the job posting's own description text (which some
-companies do include, e.g. "In your application, please address: ...").
-It does NOT scrape a separate application FORM's custom questions -
-those live on a different page/endpoint per ATS platform (often
-JS-rendered) and would need dedicated per-platform work to extract,
-which hasn't been built yet.
+If AI tailoring fails for ANY reason (both providers down, malformed
+output, truncated response, etc.), a complete FALLBACK resume - real,
+untailored content, but never incomplete - is used instead, so an
+attachment always goes out.
 """
 
 import os
@@ -30,47 +31,86 @@ KNOWLEDGE_BASE_FILE = "knowledge_base.md"
 
 def _load_knowledge_base() -> str:
     if not os.path.exists(KNOWLEDGE_BASE_FILE):
-        return "(no knowledge base file found - projects section will be empty)"
+        return "(no knowledge base file found)"
     with open(KNOWLEDGE_BASE_FILE) as f:
         return f.read()
 
 
-TAILOR_PROMPT_TEMPLATE = """You are tailoring a resume for ONE specific job posting, identifying that job's key requirements, and answering any application questions found in the posting text itself.
+TAILOR_PROMPT_TEMPLATE = """You are tailoring a resume for ONE specific job posting, identifying its key requirements, and answering any application questions in the posting text.
 
-THREE resume sections must actively adapt to THIS job:
-- SUMMARY: rewrite it to lead with what's most relevant to this specific role (still fully truthful).
-- PROJECTS: read the PROJECT KNOWLEDGE BASE below (free-form notes on the candidate's various projects) and select whichever 1-2 projects are most relevant to this job. Write 5-6 resume-style bullet points for each selected project, in the same concise, action-verb-led style as the resume's EXPERIENCE bullets. Use ONLY facts, tools, and outcomes actually stated in the knowledge base - never invent anything beyond what's written there, even if it would sound more impressive.
-- EXPERIENCE: reorder and reword bullets within each job so the most relevant ones lead.
+Only generate what's below - do NOT include name, email, phone, education, job titles, company names, dates, or techStack anywhere in your response. Those are fixed and get merged in separately - regenerating them would only waste your output space.
 
-PROJECT KNOWLEDGE BASE (free-form notes - select and write up 1-2 of these as resume projects):
+THREE things must actively adapt to THIS job:
+- SUMMARY: rewrite it to lead with what's most relevant to this role (still fully truthful, grounded in the resume/knowledge base below).
+- EXPERIENCE_BULLETS: for each job listed below (in the same order), select and reorder 3-5 of its most relevant bullets - reword lightly if it helps match the job's terminology, but keep every claim exactly true.
+- PROJECTS: read the PROJECT KNOWLEDGE BASE below and select whichever 1-2 projects fit this job best. Write 5-6 resume-style bullets for each, using ONLY facts stated in the knowledge base - never invent beyond what's written.
+
+Candidate's summary, skills, and experience (title/company for context only - do not repeat them in your output):
+{resume_context}
+
+PROJECT KNOWLEDGE BASE:
 {knowledge_base}
 
 STRICT RULES - NON-NEGOTIABLE:
-1. NEVER invent a skill, tool, achievement, employer, or metric that is not already present in the resume JSON OR the knowledge base above.
-2. You MAY reorder bullets within an experience entry to put the most relevant ones first.
-3. You MAY reorder the "skills" list entries.
-4. You MAY reword a bullet's phrasing to use terminology closer to the job description - but the underlying fact/claim must stay exactly true to the original.
-5. You MAY rewrite the "summary" field freely, as long as every claim in it is still fully supported by the resume content and knowledge base.
-6. You MAY omit bullets or entire skill categories from EXPERIENCE that are not relevant to this job (target: fills the page well, close to 1 full page). Omitting is fine; inventing is never fine.
-7. Do NOT omit either of the two "experience" entries - both real jobs must always remain. Aim for 4-5 of the most relevant bullets per job (never fewer than 3).
-8. Write "projects" as a NEW array (1-2 entries) built entirely from your selection out of the knowledge base above. Give each project a "title", "dates" (from the knowledge base), "bullets" (5-6), and "techStack" (comma-separated string of tools actually mentioned in the knowledge base for that project).
-9. Do NOT change: name, email, linkedin, phone, location, company names, job titles, dates, education, or any techStack string in EXPERIENCE.
-10. APPLICATION QUESTIONS: scan the job description text below for any explicit questions or instructions directed at applicants (e.g. "In your cover letter, tell us...", "Please answer: why this role?"). If you find any, answer each one truthfully in simple, natural, human-sounding English (not corporate-sounding), based ONLY on the resume JSON and knowledge base content - never invent an answer that isn't grounded in real facts about the candidate. If the job description contains no explicit questions, return an empty list for this.
-
-Candidate's real resume (JSON, excluding projects - those come from the knowledge base):
-{resume_json}
+1. NEVER invent a skill, tool, achievement, employer, or metric not already present in the context or knowledge base above.
+2. "experience_bullets" MUST be an array of exactly {experience_count} arrays (one per job, same order as listed), each with 3-5 bullet strings pulled/reworded from that job's real bullets - never fewer than 3.
+3. "projects" MUST have 1-2 entries, each with "title", "dates" (from the knowledge base), "bullets" (5-6 strings), and "techStack" (comma-separated string of tools mentioned in the knowledge base for it).
+4. APPLICATION QUESTIONS: scan the job description for explicit questions/instructions directed at applicants (e.g. "tell us why you want this role"). Answer each truthfully in simple, human-sounding English, grounded only in the context/knowledge base above. Empty list if none found.
 
 Job Title: {job_title}
 Job Description:
 {job_description}
 
-Return ONLY this JSON structure, no other text, no markdown fences:
+Return ONLY this JSON, no other text, no markdown fences:
 {{
-  "tailored_resume": <the tailored resume with "projects" freshly written from the knowledge base>,
-  "jd_key_requirements": [<8-15 short strings - the specific skills/tools/requirements this job description asks for>],
+  "summary": "...",
+  "experience_bullets": [["bullet", "bullet", "bullet"], ["bullet", "bullet", "bullet"]],
+  "projects": [{{"title": "...", "dates": "...", "bullets": ["...", "..."], "techStack": "..."}}],
+  "jd_key_requirements": ["...", "..."],
   "application_answers": [{{"question": "...", "answer": "..."}}]
 }}
 """
+
+
+def _build_resume_context(resume_data: dict) -> dict:
+    return {
+        "summary": resume_data["summary"],
+        "skills": resume_data["skills"],
+        "experience": [
+            {"title": job["title"], "company": job["company"], "bullets": job["bullets"]}
+            for job in resume_data["experience"]
+        ],
+    }
+
+
+def _merge_tailored_output(resume_data: dict, model_output: dict) -> dict:
+    experience_bullets = model_output["experience_bullets"]
+    if len(experience_bullets) != len(resume_data["experience"]):
+        raise ValueError(
+            f"Expected {len(resume_data['experience'])} experience bullet-lists, got {len(experience_bullets)}"
+        )
+
+    merged_experience = [
+        {**job, "bullets": bullets}
+        for job, bullets in zip(resume_data["experience"], experience_bullets)
+    ]
+
+    projects = model_output["projects"]
+    if not projects:
+        raise ValueError("Model returned zero projects")
+
+    return {
+        "name": resume_data["name"],
+        "email": resume_data["email"],
+        "linkedin": resume_data["linkedin"],
+        "phone": resume_data["phone"],
+        "location": resume_data["location"],
+        "education": resume_data["education"],
+        "summary": model_output["summary"],
+        "skills": resume_data["skills"],
+        "experience": merged_experience,
+        "projects": projects,
+    }
 
 
 def _compute_keyword_coverage(tailored_resume: dict, jd_key_requirements: list) -> tuple:
@@ -82,32 +122,66 @@ def _compute_keyword_coverage(tailored_resume: dict, jd_key_requirements: list) 
     return coverage, matched
 
 
-def tailor_resume(resume_data: dict, job_title: str, job_description: str, max_retries: int = 5) -> dict:
-    """Returns {'resume': dict, 'coverage_percent': int, 'matched_keywords': list, 'application_answers': list}"""
-    resume_without_projects = {k: v for k, v in resume_data.items() if k != "projects"}
+def build_fallback_resume(resume_data: dict) -> dict:
+    """
+    A complete, real, untailored resume - used ONLY when AI tailoring
+    fails after all retries/providers/parse-attempts. Always has a
+    project, so the output is never incomplete - just not job-specific
+    this one time.
+    """
+    kb_text = _load_knowledge_base()
+    first_project_match = re.search(r"^##\s+(.+?)\n\*\*Timeframe:\*\*\s*(.+?)\n\n(.+?)(?=\n---|\Z)", kb_text, re.DOTALL | re.MULTILINE)
+    if first_project_match:
+        title, dates, body = first_project_match.groups()
+        bullets = [s.strip() for s in re.split(r"(?<=[.])\s+", body.strip()) if s.strip()][:6]
+        fallback_project = {"title": title.strip(), "dates": dates.strip(), "bullets": bullets, "techStack": "See project description"}
+    else:
+        fallback_project = {"title": "AI-Powered Job Discovery & Resume Automation", "dates": "July 2026",
+                             "bullets": ["Built a fully automated job-discovery and resume-tailoring system."],
+                             "techStack": "Python, GitHub Actions, LLM APIs"}
 
+    return {
+        "name": resume_data["name"], "email": resume_data["email"], "linkedin": resume_data["linkedin"],
+        "phone": resume_data["phone"], "location": resume_data["location"], "education": resume_data["education"],
+        "summary": resume_data["summary"], "skills": resume_data["skills"],
+        "experience": resume_data["experience"], "projects": [fallback_project],
+    }
+
+
+def tailor_resume(resume_data: dict, job_title: str, job_description: str, max_retries: int = 5, max_parse_attempts: int = 2) -> dict:
+    """Returns {'resume': dict, 'coverage_percent': int, 'matched_keywords': list, 'application_answers': list, 'used_fallback': bool}"""
+    resume_context = _build_resume_context(resume_data)
     prompt = TAILOR_PROMPT_TEMPLATE.format(
+        resume_context=json.dumps(resume_context, indent=2),
         knowledge_base=_load_knowledge_base(),
-        resume_json=json.dumps(resume_without_projects, indent=2),
+        experience_count=len(resume_data["experience"]),
         job_title=job_title,
         job_description=job_description[:6000],
     )
 
-    raw_text = call_llm(prompt, providers=TAILOR_PROVIDERS, max_retries=max_retries)
-    cleaned = re.sub(r"^```(json)?|```$", "", raw_text.strip(), flags=re.MULTILINE).strip()
-    parsed = json.loads(cleaned)
+    last_error = None
+    for parse_attempt in range(max_parse_attempts):
+        try:
+            raw_text = call_llm(prompt, providers=TAILOR_PROVIDERS, max_retries=max_retries)
+            cleaned = re.sub(r"^```(json)?|```$", "", raw_text.strip(), flags=re.MULTILINE).strip()
+            parsed = json.loads(cleaned)
+            tailored = _merge_tailored_output(resume_data, parsed)
 
-    tailored = parsed["tailored_resume"]
-    jd_requirements = parsed.get("jd_key_requirements", [])
-    application_answers = parsed.get("application_answers", [])
+            jd_requirements = parsed.get("jd_key_requirements", [])
+            application_answers = parsed.get("application_answers", [])
+            coverage, matched = _compute_keyword_coverage(tailored, jd_requirements)
 
-    for locked_field in ("name", "email", "linkedin", "phone", "location", "education"):
-        tailored[locked_field] = resume_data[locked_field]
+            return {
+                "resume": tailored, "coverage_percent": coverage, "matched_keywords": matched,
+                "application_answers": application_answers, "used_fallback": False,
+            }
+        except Exception as e:
+            last_error = e
+            print(f"[WARN] Tailoring parse attempt {parse_attempt + 1}/{max_parse_attempts} failed: {e}")
+            continue
 
-    coverage, matched = _compute_keyword_coverage(tailored, jd_requirements)
+    print(f"[WARN] All tailoring attempts failed ({last_error}) - using untailored fallback resume so an attachment still goes out")
     return {
-        "resume": tailored,
-        "coverage_percent": coverage,
-        "matched_keywords": matched,
-        "application_answers": application_answers,
+        "resume": build_fallback_resume(resume_data), "coverage_percent": 0, "matched_keywords": [],
+        "application_answers": [], "used_fallback": True,
     }
