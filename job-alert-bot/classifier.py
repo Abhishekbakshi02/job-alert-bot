@@ -8,6 +8,7 @@ one provider's daily quota running out doesn't stall the whole run.
 
 import re
 import json
+CLASSIFY_MAX_TOKENS = 1500
 
 from llm_client import call_llm, CLASSIFY_PROVIDERS
 
@@ -38,7 +39,7 @@ def _classify_chunk(jobs: list[dict], max_retries: int = 5) -> list[dict]:
     )
     prompt = BATCH_PROMPT_TEMPLATE.format(count=len(jobs), jobs_text=jobs_text)
 
-    raw_text = call_llm(prompt, providers=CLASSIFY_PROVIDERS, max_retries=max_retries)
+    raw_text = call_llm(prompt, providers=CLASSIFY_PROVIDERS, max_retries=max_retries, max_tokens=CLASSIFY_MAX_TOKENS)
     cleaned = re.sub(r"^```(json)?|```$", "", raw_text.strip(), flags=re.MULTILINE).strip()
     results = json.loads(cleaned)
 
