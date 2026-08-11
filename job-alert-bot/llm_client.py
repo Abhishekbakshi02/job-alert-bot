@@ -12,6 +12,14 @@ Two different orderings are used for two different reasons:
     matters most here, so Gemini's scarce-but-higher-quality output is
     worth spending on the few calls this actually needs. Groq is the
     fallback if Gemini's daily quota runs out.
+
+max_tokens is a PARAMETER, not a blanket constant - Groq's free tier
+enforces a tokens-PER-MINUTE cap per model (as low as 6,000-10,000 on
+some models), and that limit is charged against the RESERVED max_tokens
+budget, not just what's actually generated. A classify call (small
+JSON output) and a tailor call (bigger JSON output) need very different
+budgets - reserving too much on every call wastes headroom and can
+trigger 413 "request too large" errors even on tiny requests.
 """
 
 import os
@@ -37,7 +45,7 @@ CLASSIFY_PROVIDERS = [GROQ, GEMINI]
 TAILOR_PROVIDERS = [GEMINI, GROQ]
 
 
-def _call_one_provider(provider: dict, prompt: str, max_retries: int) -> str:
+def _call_one_provider(provider: dict, prompt: str, max_retries: int, max_tokens: int) -> str:
     api_key = os.environ.get(provider["api_key_env"], "").strip()
     if not api_key:
         raise GeminiUnavailable(f"{provider['name']}: no API key set ({provider['api_key_env']})")
@@ -50,8 +58,7 @@ def _call_one_provider(provider: dict, prompt: str, max_retries: int) -> str:
                 "model": provider["model"],
                 "messages": [{"role": "user", "content": prompt}],
                 "temperature": 0.3,
-                "max_tokens": 8000,
-              
+                "max_tokens": max_tokens,
             },
             timeout=60,
         )
@@ -61,6 +68,11 @@ def _call_one_provider(provider: dict, prompt: str, max_retries: int) -> str:
             print(f"[INFO] {provider['name']} rate limit hit, waiting {wait_seconds}s (retry {attempt + 1}/{max_retries})")
             time.sleep(wait_seconds)
             continue
+
+        if response.status_code == 413:
+            print(f"[WARN] {provider['name']} rejected the request as too large (413) - "
+                  f"falling through to next provider immediately")
+            raise GeminiUnavailable(f"{provider['name']}: request too large (413)")
 
         if response.status_code in (500, 502, 503, 504):
             wait_seconds = 8 * (attempt + 1)
@@ -75,12 +87,12 @@ def _call_one_provider(provider: dict, prompt: str, max_retries: int) -> str:
     raise GeminiUnavailable(f"{provider['name']} failed after {max_retries} retries")
 
 
-def call_llm(prompt: str, providers: list, max_retries: int = 5) -> str:
+def call_llm(prompt: str, providers: list, max_retries: int = 5, max_tokens: int = 2000) -> str:
     errors = []
     for provider in providers:
         try:
             print(f"[INFO] Trying {provider['name']}...")
-            return _call_one_provider(provider, prompt, max_retries)
+            return _call_one_provider(provider, prompt, max_retries, max_tokens)
         except GeminiUnavailable as e:
             print(f"[INFO] {provider['name']} unavailable ({e}) - falling through to next provider")
             errors.append(str(e))
