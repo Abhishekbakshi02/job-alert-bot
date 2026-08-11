@@ -122,8 +122,12 @@ def main():
                 )
                 build_resume_pdf(tailor_result["resume"], resume_path)
                 application_answers = tailor_result["application_answers"]
-                print(f"[INFO] Keyword coverage for '{job['title']}': {tailor_result['coverage_percent']}% "
-                      f"({len(tailor_result['matched_keywords'])} of the JD's key requirements matched)")
+                if tailor_result["used_fallback"]:
+                    print(f"[INFO] Used untailored fallback resume for '{job['title']}' - AI tailoring failed, "
+                          f"but a complete resume was still attached")
+                else:
+                    print(f"[INFO] Keyword coverage for '{job['title']}': {tailor_result['coverage_percent']}% "
+                          f"({len(tailor_result['matched_keywords'])} of the JD's key requirements matched)")
             except GeminiUnavailable as e:
                 print(f"[WARN] AI provider(s) unavailable while tailoring ({e}) - stopping "
                       f"further AI calls for the rest of this run.")
