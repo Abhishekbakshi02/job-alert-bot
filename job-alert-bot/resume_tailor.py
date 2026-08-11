@@ -23,6 +23,7 @@ attachment always goes out.
 import os
 import re
 import json
+TAILOR_MAX_TOKENS = 4000
 
 from llm_client import call_llm, TAILOR_PROVIDERS
 
@@ -162,7 +163,7 @@ def tailor_resume(resume_data: dict, job_title: str, job_description: str, max_r
     last_error = None
     for parse_attempt in range(max_parse_attempts):
         try:
-            raw_text = call_llm(prompt, providers=TAILOR_PROVIDERS, max_retries=max_retries)
+            raw_text = call_llm(prompt, providers=TAILOR_PROVIDERS, max_retries=max_retries, max_tokens=TAILOR_MAX_TOKENS)
             cleaned = re.sub(r"^```(json)?|```$", "", raw_text.strip(), flags=re.MULTILINE).strip()
             parsed = json.loads(cleaned)
             tailored = _merge_tailored_output(resume_data, parsed)
