@@ -50,6 +50,8 @@ def _call_one_provider(provider: dict, prompt: str, max_retries: int) -> str:
                 "model": provider["model"],
                 "messages": [{"role": "user", "content": prompt}],
                 "temperature": 0.3,
+                "max_tokens": 8000,
+              
             },
             timeout=60,
         )
