@@ -780,5 +780,425 @@
   {
     "name": "Valgenesis",
     "url": "https://jobs.lever.co/valgenesis"
+  },
+  {
+    "name": "Guidepoint",
+    "url": "https://boards.greenhouse.io/guidepoint"
+  },
+  {
+    "name": "DeepIntent",
+    "url": "https://boards.greenhouse.io/deepintent"
+  },
+  {
+    "name": "Lynx Analytics",
+    "url": "https://boards.greenhouse.io/lynxanalytics"
+  },
+  {
+    "name": "AlphaSense",
+    "url": "https://boards.greenhouse.io/alphasense"
+  },
+  {
+    "name": "Epic Kids Inc.",
+    "url": "https://boards.greenhouse.io/epickids"
+  },
+  {
+    "name": "CloudSEK",
+    "url": "https://boards.greenhouse.io/cloudsek"
+  },
+  {
+    "name": "ClearView Healthcare Partners",
+    "url": "https://boards.greenhouse.io/clearviewhealthcarepartners"
+  },
+  {
+    "name": "Jumio",
+    "url": "https://boards.greenhouse.io/jumio"
+  },
+  {
+    "name": "Archipelago Analytics Inc.",
+    "url": "https://boards.greenhouse.io/onarchipelago"
+  },
+  {
+    "name": "Sumo Logic",
+    "url": "https://boards.greenhouse.io/sumologic"
+  },
+  {
+    "name": "Insurity India",
+    "url": "https://boards.greenhouse.io/insurityindia"
+  },
+  {
+    "name": "Instead",
+    "url": "https://boards.greenhouse.io/instead"
+  },
+  {
+    "name": "Sardine",
+    "url": "https://jobs.ashbyhq.com/sardine"
+  },
+  {
+    "name": "Madecard",
+    "url": "https://jobs.ashbyhq.com/madecard"
+  },
+  {
+    "name": "Tolken",
+    "url": "https://jobs.ashbyhq.com/tolken"
+  },
+  {
+    "name": "Demandbase",
+    "url": "https://jobs.ashbyhq.com/demandbase"
+  },
+  {
+    "name": "Outmarket",
+    "url": "https://jobs.ashbyhq.com/outmarket"
+  },
+  {
+    "name": "Savvymoney",
+    "url": "https://jobs.ashbyhq.com/savvymoney"
+  },
+  {
+    "name": "Lgads",
+    "url": "https://jobs.ashbyhq.com/lgads"
+  },
+  {
+    "name": "Drivetrain",
+    "url": "https://jobs.lever.co/drivetrain"
+  },
+  {
+    "name": "Netomi",
+    "url": "https://jobs.lever.co/netomi"
+  },
+  {
+    "name": "Zimperium",
+    "url": "https://jobs.lever.co/zimperium"
+  },
+  {
+    "name": "Stable Money1",
+    "url": "https://jobs.lever.co/stable-money1"
+  },
+  {
+    "name": "Jumpcloud",
+    "url": "https://jobs.lever.co/jumpcloud"
+  },
+  {
+    "name": "Gohighlevel",
+    "url": "https://jobs.lever.co/gohighlevel"
+  },
+  {
+    "name": "bswift India",
+    "url": "https://boards.greenhouse.io/bswiftindia"
+  },
+  {
+    "name": "Particle41",
+    "url": "https://boards.greenhouse.io/particle41llc"
+  },
+  {
+    "name": "Zinnia",
+    "url": "https://boards.greenhouse.io/zinnia"
+  },
+  {
+    "name": "Energy Exemplar",
+    "url": "https://boards.greenhouse.io/energyexemplarllc"
+  },
+  {
+    "name": "Applied",
+    "url": "https://jobs.ashbyhq.com/applied"
+  },
+  {
+    "name": "Dehazelabs",
+    "url": "https://jobs.ashbyhq.com/dehazelabs"
+  },
+  {
+    "name": "Meraki Labs",
+    "url": "https://jobs.ashbyhq.com/meraki-labs"
+  },
+  {
+    "name": "Bespokelabs",
+    "url": "https://jobs.ashbyhq.com/bespokelabs"
+  },
+  {
+    "name": "Broccoli",
+    "url": "https://jobs.ashbyhq.com/broccoli"
+  },
+  {
+    "name": "Ema",
+    "url": "https://jobs.ashbyhq.com/ema"
+  },
+  {
+    "name": "Brevo",
+    "url": "https://jobs.lever.co/brevo"
+  },
+  {
+    "name": "Ion",
+    "url": "https://jobs.lever.co/ion"
+  },
+  {
+    "name": "Levelai",
+    "url": "https://jobs.lever.co/levelai"
+  },
+  {
+    "name": "Distro",
+    "url": "https://jobs.lever.co/distro"
+  },
+  {
+    "name": "3pillarglobal",
+    "url": "https://jobs.lever.co/3pillarglobal"
+  },
+  {
+    "name": "Safe",
+    "url": "https://jobs.lever.co/safe"
+  },
+  {
+    "name": "Kobie",
+    "url": "https://jobs.lever.co/kobie"
+  },
+  {
+    "name": "Beghouconsulting",
+    "url": "https://jobs.lever.co/beghouconsulting"
+  },
+  {
+    "name": "Weekdayworks",
+    "url": "https://jobs.lever.co/weekdayworks"
+  },
+  {
+    "name": "Thinkahead",
+    "url": "https://jobs.lever.co/thinkahead"
+  },
+  {
+    "name": "Mactores",
+    "url": "https://jobs.lever.co/mactores"
+  },
+  {
+    "name": "Peoplegrove",
+    "url": "https://jobs.lever.co/peoplegrove"
+  },
+  {
+    "name": "Acceldata",
+    "url": "https://jobs.lever.co/acceldata"
+  },
+  {
+    "name": "Jobgether",
+    "url": "https://jobs.lever.co/jobgether"
+  },
+  {
+    "name": "Acmo1",
+    "url": "https://jobs.smartrecruiters.com/acmo1"
+  },
+  {
+    "name": "ClickHouse",
+    "url": "https://boards.greenhouse.io/clickhouse"
+  },
+  {
+    "name": "66degrees",
+    "url": "https://boards.greenhouse.io/66degrees"
+  },
+  {
+    "name": "PubMatic",
+    "url": "https://boards.greenhouse.io/pubmatic"
+  },
+  {
+    "name": "Spector Ai",
+    "url": "https://jobs.ashbyhq.com/spector-ai"
+  },
+  {
+    "name": "Bolna",
+    "url": "https://jobs.ashbyhq.com/bolna"
+  },
+  {
+    "name": "Lingarogroup",
+    "url": "https://jobs.lever.co/lingarogroup"
+  },
+  {
+    "name": "Shyftlabs",
+    "url": "https://jobs.lever.co/shyftlabs"
+  },
+  {
+    "name": "Adsgroup1",
+    "url": "https://jobs.smartrecruiters.com/adsgroup1"
+  },
+  {
+    "name": "Necsws",
+    "url": "https://jobs.smartrecruiters.com/necsws"
+  },
+  {
+    "name": "Squircleitconsultingservicespvtltd",
+    "url": "https://jobs.smartrecruiters.com/squircleitconsultingservicespvtltd"
+  },
+  {
+    "name": "Qadinc",
+    "url": "https://jobs.smartrecruiters.com/qadinc"
+  },
+  {
+    "name": "Datakrewpvtltd",
+    "url": "https://jobs.smartrecruiters.com/datakrewpvtltd"
+  },
+  {
+    "name": "T Systemsictindiapvtltd1",
+    "url": "https://jobs.smartrecruiters.com/t-systemsictindiapvtltd1"
+  },
+  {
+    "name": "Nielseniq",
+    "url": "https://jobs.smartrecruiters.com/nielseniq"
+  },
+  {
+    "name": "Jupitorconsulting",
+    "url": "https://jobs.smartrecruiters.com/jupitorconsulting"
+  },
+  {
+    "name": "Markeeterscom",
+    "url": "https://jobs.smartrecruiters.com/markeeterscom"
+  },
+  {
+    "name": "Springernature",
+    "url": "https://jobs.smartrecruiters.com/springernature"
+  },
+  {
+    "name": "Contxtio",
+    "url": "https://jobs.smartrecruiters.com/contxtio"
+  },
+  {
+    "name": "Headout",
+    "url": "https://boards.greenhouse.io/headoutcareers"
+  },
+  {
+    "name": "SonicWall",
+    "url": "https://boards.greenhouse.io/sonicwall"
+  },
+  {
+    "name": "Turing",
+    "url": "https://boards.greenhouse.io/turing"
+  },
+  {
+    "name": "Konrad",
+    "url": "https://boards.greenhouse.io/konradgroup"
+  },
+  {
+    "name": "Pravah",
+    "url": "https://jobs.ashbyhq.com/pravah"
+  },
+  {
+    "name": "Apexx",
+    "url": "https://jobs.ashbyhq.com/apexx"
+  },
+  {
+    "name": "Blitzy",
+    "url": "https://jobs.ashbyhq.com/blitzy"
+  },
+  {
+    "name": "Litmus",
+    "url": "https://jobs.ashbyhq.com/litmus"
+  },
+  {
+    "name": "Altimate",
+    "url": "https://jobs.ashbyhq.com/altimate"
+  },
+  {
+    "name": "Wmg",
+    "url": "https://jobs.lever.co/wmg"
+  },
+  {
+    "name": "Klearnow",
+    "url": "https://jobs.lever.co/klearnow"
+  },
+  {
+    "name": "Vizexperts",
+    "url": "https://jobs.smartrecruiters.com/vizexperts"
+  },
+  {
+    "name": "Experian",
+    "url": "https://jobs.smartrecruiters.com/experian"
+  },
+  {
+    "name": "Jitterbit",
+    "url": "https://jobs.smartrecruiters.com/jitterbit"
+  },
+  {
+    "name": "Intuit2",
+    "url": "https://jobs.smartrecruiters.com/intuit2"
+  },
+  {
+    "name": "Blueberrylabsprivatelimited",
+    "url": "https://jobs.smartrecruiters.com/blueberrylabsprivatelimited"
+  },
+  {
+    "name": "Avisoai",
+    "url": "https://jobs.smartrecruiters.com/avisoai"
+  },
+  {
+    "name": "Redwood Software",
+    "url": "https://boards.greenhouse.io/redwoodsoftware"
+  },
+  {
+    "name": "Orion Innovation Naukri",
+    "url": "https://boards.greenhouse.io/orioninnovationnaukri"
+  },
+  {
+    "name": "Careway",
+    "url": "https://jobs.ashbyhq.com/careway"
+  },
+  {
+    "name": "Turgon Ai",
+    "url": "https://jobs.lever.co/turgon-ai"
+  },
+  {
+    "name": "Revefi",
+    "url": "https://jobs.lever.co/revefi"
+  },
+  {
+    "name": "Neuron7",
+    "url": "https://jobs.lever.co/neuron7"
+  },
+  {
+    "name": "Hevodata",
+    "url": "https://jobs.lever.co/hevodata"
+  },
+  {
+    "name": "Extremenetworks",
+    "url": "https://jobs.lever.co/extremenetworks"
+  },
+  {
+    "name": "Epifi",
+    "url": "https://jobs.lever.co/epifi"
+  },
+  {
+    "name": "Tsmg",
+    "url": "https://jobs.lever.co/tsmg"
+  },
+  {
+    "name": "Zeta",
+    "url": "https://jobs.lever.co/zeta"
+  },
+  {
+    "name": "Hackveda",
+    "url": "https://jobs.smartrecruiters.com/hackveda"
+  },
+  {
+    "name": "Soprasteria1",
+    "url": "https://jobs.smartrecruiters.com/soprasteria1"
+  },
+  {
+    "name": "Sandisk",
+    "url": "https://jobs.smartrecruiters.com/sandisk"
+  },
+  {
+    "name": "Linkedin3",
+    "url": "https://jobs.smartrecruiters.com/linkedin3"
+  },
+  {
+    "name": "Thenielsencompany",
+    "url": "https://jobs.smartrecruiters.com/thenielsencompany"
+  },
+  {
+    "name": "Vams",
+    "url": "https://jobs.smartrecruiters.com/vams"
+  },
+  {
+    "name": "Blend360",
+    "url": "https://jobs.smartrecruiters.com/blend360"
+  },
+  {
+    "name": "Sensia",
+    "url": "https://jobs.smartrecruiters.com/sensia"
+  },
+  {
+    "name": "Rsconsultants",
+    "url": "https://jobs.smartrecruiters.com/rsconsultants"
   }
 ]
