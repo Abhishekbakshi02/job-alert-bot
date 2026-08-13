@@ -39,7 +39,7 @@ REST APIs, ThreadPoolExecutor.
 ---
 
 ## Multimodal AI Assistant (RAG + Voice)
-**Timeframe:** PLACEHOLDER - your actual timeframe here
+June 2026
 
 Built a production-grade multimodal AI assistant using Python and
 FastAPI, integrating document processing, semantic retrieval, LLMs,
