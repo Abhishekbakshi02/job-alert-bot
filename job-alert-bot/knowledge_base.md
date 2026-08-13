@@ -41,23 +41,15 @@ REST APIs, ThreadPoolExecutor.
 ## Multimodal AI Assistant (RAG + Voice)
 June 2026
 
-Built a production-grade multimodal AI assistant using Python and
-FastAPI, integrating document processing, semantic retrieval, LLMs,
-speech recognition, and speech synthesis into one conversational
-application. Processed documents (PDF, DOCX, TXT) using PyMuPDF,
-python-docx, and BeautifulSoup, then cleaned, chunked, and converted
-text into vector embeddings using Sentence Transformers (BGE). Stored
-embeddings and metadata in ChromaDB to enable semantic search,
-retrieving relevant document chunks via cosine similarity against user
-query embeddings. Implemented a Retrieval-Augmented Generation (RAG)
-pipeline that passed retrieved context to a Large Language Model (GPT)
-to generate accurate, context-aware responses. Enabled voice
-interaction end-to-end using OpenAI Whisper (speech-to-text) and OpenAI
-TTS (text-to-speech). Used PostgreSQL for user data, chat history, and
-document metadata; containerized the application with Docker and
-Docker Compose. Tech: Python, FastAPI, PyMuPDF, python-docx,
-BeautifulSoup, Sentence Transformers (BGE), ChromaDB, OpenAI Whisper,
-OpenAI TTS, GPT, PostgreSQL, Docker, Docker Compose, Git, Postman.
+Developed an end-to-end Multimodal Retrieval-Augmented Generation (RAG) AI Assistant enabling users to interact with PDF, DOCX, TXT, Markdown, images, tables, charts, and voice queries using a completely local, zero-cost architecture. Built the document ingestion pipeline with PyMuPDF, python-docx, OCR, LangChain document loaders, semantic chunking, and metadata extraction, generating embeddings using BGE/Sentence Transformers and storing them in ChromaDB with HNSW-based approximate nearest-neighbor indexing.
+
+Designed a stateful RAG workflow using LangGraph to orchestrate query processing, retrieval, reranking, context validation, response generation, citation extraction, and fallback handling. Used LangChain for LLM integration, prompt management, document abstractions, retrievers, and model/tool orchestration. Implemented multi-stage retrieval comprising query embedding, Top-K vector search, similarity filtering, deduplication, cross-encoder reranking, and context selection, before passing relevant evidence to locally hosted open-source LLMs through Ollama. Implemented grounded prompting, source citations, and unanswerable-query detection to reduce hallucinations and unsupported responses.
+
+Integrated Faster-Whisper for local speech-to-text and open-source TTS for voice interaction. Extended the system with OCR and Vision-Language Models (VLMs) to process scanned pages, images, tables, and charts, enabling multimodal question answering over textual and visual context. Used PostgreSQL for users, documents, metadata, conversations, and application state, while ChromaDB handled semantic vector storage and retrieval. Developed the backend with FastAPI and containerized the complete system using Docker/Docker Compose.
+
+Created an evaluation framework with 250+ benchmark questions covering factual, multi-hop, table, chart/image, and unanswerable queries. Evaluated retrieval using Recall@5, Precision@5, MRR, and NDCG@5, and RAG quality using Faithfulness, Context Precision, Context Recall, Answer Relevancy, and Multimodal Faithfulness. Established targets of ≥90% Recall@5, ≥85% Context Precision, ≥85% Context Recall, ≥90% Faithfulness, ≥85% Answer Relevancy, <300 ms retrieval latency, and <3 s P95 end-to-end latency. Maintained the complete implementation, evaluation suite, automated tests, documentation, and reproducible setup in a public GitHub repository.
+
+Tech Stack: Python, FastAPI, LangChain, LangGraph, ChromaDB, PostgreSQL, BGE/Sentence Transformers, Cross-Encoder Reranker, Ollama, Open-Source LLMs/VLMs, Faster-Whisper, TTS, OCR, PyMuPDF, python-docx, Docker, Docker Compose, Git, GitHub, RAGAS, NumPy, Pandas.
 
 ---
 
