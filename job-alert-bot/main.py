@@ -86,7 +86,21 @@ def main():
         if gemini_down:
             continue
 
-        new_candidates = [job for job in candidates if job["absolute_url"] not in seen]
+        # Filter against new_seen (the running, growing set) rather than the
+        # static `seen` loaded at the top of the run, so a URL already saved
+        # for an earlier company in *this* run isn't treated as new again.
+        # seen_this_company also drops duplicate URLs within a single
+        # company's own candidate list, so the same job is never classified
+        # or emailed twice in one pass.
+        seen_this_company = set()
+        new_candidates = []
+        for job in candidates:
+            url = job["absolute_url"]
+            if url in new_seen or url in seen_this_company:
+                continue
+            seen_this_company.add(url)
+            new_candidates.append(job)
+
         if not new_candidates:
             continue
 
@@ -151,7 +165,10 @@ def main():
                 suffix += f", {len(application_answers)} application question(s) answered"
             print(f"[MATCH] Emailed: {job['title']} at {company_name} ({suffix})")
 
-    save_seen(new_seen)
+        # Save progress right after this company instead of waiting for the
+        # whole run to finish, so an interruption or crash later on doesn't
+        # lose the seen-state for companies already processed in this run.
+        save_seen(new_seen)
 
     if len(still_valid) != len(companies):
         removed_count = len(companies) - len(still_valid)
