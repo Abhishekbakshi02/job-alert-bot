@@ -47,6 +47,10 @@ jobs:
         run: |
           git config user.name "job-alert-bot"
           git config user.email "actions@github.com"
+          git fetch origin main
+          python3 merge_seen_jobs.py
+          python3 merge_companies.py
+          git reset --soft origin/main
           git add seen_jobs.json companies.json
-          git diff --quiet --cached || git commit -m "Update seen jobs list"
-          git push
+          git diff --quiet --cached || git commit -m "Update seen jobs and companies list"
+          git push origin main
