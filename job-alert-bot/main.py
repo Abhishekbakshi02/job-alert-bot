@@ -155,7 +155,11 @@ def main():
 
     if len(still_valid) != len(companies):
         removed_count = len(companies) - len(still_valid)
+        still_valid_urls = {c["url"] for c in still_valid}
+        removed_urls = [c["url"] for c in companies if c["url"] not in still_valid_urls]
         save_companies(still_valid)
+        with open("removed_company_urls.json", "w") as f:
+            json.dump(removed_urls, f)
         print(f"[INFO] Removed {removed_count} dead compan(ies) from companies.json")
 
 
