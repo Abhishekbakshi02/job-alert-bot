@@ -48,7 +48,7 @@ NEMOTRON = {
 }
 
 # Gemini deliberately excluded here - reserved for resume tailoring only.
-CLASSIFY_PROVIDERS = [GROQ, NEMOTRON]
+CLASSIFY_PROVIDERS = [NEMOTRON, GROQ]
 TAILOR_PROVIDERS = [GEMINI, GROQ]
 
 
