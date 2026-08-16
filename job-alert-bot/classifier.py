@@ -8,7 +8,7 @@ one provider's daily quota running out doesn't stall the whole run.
 
 import re
 import json
-CLASSIFY_MAX_TOKENS = 15000
+CLASSIFY_MAX_TOKENS = 2000
 
 from llm_client import call_llm, CLASSIFY_PROVIDERS
 
