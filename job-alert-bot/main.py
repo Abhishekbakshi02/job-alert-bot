@@ -150,7 +150,11 @@ def main():
                 print(f"[WARN] Failed to send email for '{job['title']}' at {company_name}: {e} - "
                       f"not marking as seen, will retry next run")
 
-    save_seen(new_seen)
+        # Persist right after this company's jobs are processed, instead of waiting
+        # until every company in the run has been checked. new_seen is a set, so
+        # re-adding a URL that's already in it (from this company or a prior one)
+        # is a no-op - no duplicates ever reach seen_jobs.
+        save_seen(new_seen)
 
     if len(still_valid) != len(companies):
         removed_count = len(companies) - len(still_valid)
