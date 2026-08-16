@@ -40,9 +40,17 @@ GROQ = {
     "api_key_env": "GROQ_API_KEY",
     "model": "openai/gpt-oss-120b",
 }
+NEMOTRON = {
+    "name": "Nemotron",
+    "url": "https://integrate.api.nvidia.com/v1/chat/completions",
+    "api_key_env": "NVIDIA_API_KEY",
+    "model": "nvidia/nemotron-3-super-120b-a12b",
+}
 
-CLASSIFY_PROVIDERS = [GROQ, GEMINI]
+# Gemini deliberately excluded here - reserved for resume tailoring only.
+CLASSIFY_PROVIDERS = [GROQ, NEMOTRON]
 TAILOR_PROVIDERS = [GEMINI, GROQ]
+
 
 
 def _call_one_provider(provider: dict, prompt: str, max_retries: int, max_tokens: int) -> str:
