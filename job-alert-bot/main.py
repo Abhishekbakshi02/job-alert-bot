@@ -1,11 +1,12 @@
 """
 The main entry point - this is what GitHub Actions runs every day.
 
-Fetching (network I/O to each company's career page) runs in parallel
-across companies - it's independent, stateless work. Classification and
-resume tailoring stay SEQUENTIAL after that: they share an AI rate-limit
-budget and lean on the circuit-breaker logic below, so running those
-concurrently would work against the pacing that logic depends on.
+Fetching runs in parallel across companies. Classification and resume
+tailoring stay sequential - they share an AI rate-limit budget.
+
+A matched job is only marked "seen" AFTER its email successfully sends -
+not before. If sending fails for any reason, the match stays un-seen
+and gets retried on the next run, rather than being silently lost.
 """
 
 import os
@@ -42,7 +43,6 @@ def _safe_filename(text: str) -> str:
 
 
 def _fetch_one(index: int, company: dict):
-    """Runs in a worker thread - just the network fetch, nothing else."""
     try:
         candidates = get_jobs_for_url(company["url"])
         return index, company, candidates, None
@@ -86,21 +86,7 @@ def main():
         if gemini_down:
             continue
 
-        # Filter against new_seen (the running, growing set) rather than the
-        # static `seen` loaded at the top of the run, so a URL already saved
-        # for an earlier company in *this* run isn't treated as new again.
-        # seen_this_company also drops duplicate URLs within a single
-        # company's own candidate list, so the same job is never classified
-        # or emailed twice in one pass.
-        seen_this_company = set()
-        new_candidates = []
-        for job in candidates:
-            url = job["absolute_url"]
-            if url in new_seen or url in seen_this_company:
-                continue
-            seen_this_company.add(url)
-            new_candidates.append(job)
-
+        new_candidates = [job for job in candidates if job["absolute_url"] not in seen]
         if not new_candidates:
             continue
 
@@ -119,9 +105,8 @@ def main():
             continue
 
         for job, result in zip(new_candidates, results):
-            new_seen.add(job["absolute_url"])
-
             if not result.get("matches"):
+                new_seen.add(job["absolute_url"])
                 print(f"[SKIP] {job['title']} at {company_name} - {result.get('reason')}")
                 continue
 
@@ -142,41 +127,34 @@ def main():
                 else:
                     print(f"[INFO] Keyword coverage for '{job['title']}': {tailor_result['coverage_percent']}% "
                           f"({len(tailor_result['matched_keywords'])} of the JD's key requirements matched)")
-            except GeminiUnavailable as e:
-                print(f"[WARN] AI provider(s) unavailable while tailoring ({e}) - stopping "
-                      f"further AI calls for the rest of this run.")
-                gemini_down = True
-                resume_path = None
             except Exception as e:
-                print(f"[WARN] Resume tailoring failed for '{job['title']}' at {company_name}: {e}")
+                print(f"[WARN] Could not produce a resume PDF for '{job['title']}' at {company_name}: {e}")
                 resume_path = None
 
-            send_job_alert(
-                title=job["title"],
-                company=company_name,
-                location=job["location"]["name"],
-                url=job["absolute_url"],
-                reason=result.get("reason", ""),
-                resume_path=resume_path,
-                application_answers=application_answers,
-            )
-            suffix = "with tailored resume" if resume_path else "resume tailoring failed - sent without attachment"
-            if application_answers:
-                suffix += f", {len(application_answers)} application question(s) answered"
-            print(f"[MATCH] Emailed: {job['title']} at {company_name} ({suffix})")
+            try:
+                send_job_alert(
+                    title=job["title"],
+                    company=company_name,
+                    location=job["location"]["name"],
+                    url=job["absolute_url"],
+                    reason=result.get("reason", ""),
+                    resume_path=resume_path,
+                    application_answers=application_answers,
+                )
+                new_seen.add(job["absolute_url"])
+                suffix = "with tailored resume" if resume_path else "resume tailoring failed - sent without attachment"
+                if application_answers:
+                    suffix += f", {len(application_answers)} application question(s) answered"
+                print(f"[MATCH] Emailed: {job['title']} at {company_name} ({suffix})")
+            except Exception as e:
+                print(f"[WARN] Failed to send email for '{job['title']}' at {company_name}: {e} - "
+                      f"not marking as seen, will retry next run")
 
-        # Save progress right after this company instead of waiting for the
-        # whole run to finish, so an interruption or crash later on doesn't
-        # lose the seen-state for companies already processed in this run.
-        save_seen(new_seen)
+    save_seen(new_seen)
 
     if len(still_valid) != len(companies):
         removed_count = len(companies) - len(still_valid)
-        still_valid_urls = {c["url"] for c in still_valid}
-        removed_urls = [c["url"] for c in companies if c["url"] not in still_valid_urls]
         save_companies(still_valid)
-        with open("removed_company_urls.json", "w") as f:
-            json.dump(removed_urls, f)
         print(f"[INFO] Removed {removed_count} dead compan(ies) from companies.json")
 
 
