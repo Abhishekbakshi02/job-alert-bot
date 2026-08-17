@@ -1,21 +1,21 @@
-"""
-Shared title-matching logic used by every platform-specific fetcher
-(Greenhouse, Lever, Ashby, etc.) so the keyword list only lives in one
-place.
-"""
+import re
 
-TARGET_TITLE_KEYWORDS = [
-    "machine learning engineer",
-    "ml engineer",
-    "ai engineer",
-    "llm engineer",
-    "applied ai",
-    "applied ml",
-    "ai/ml engineer",
-    "prompt engineer"
+TITLE_KEYWORDS = [
+    # Core ML/AI
+    r"machine learning", r"\bml\b", r"artificial intelligence", r"\bai\b",
+    r"deep learning", r"neural network",
+    # LLM/GenAI specific
+    r"\bllm\b", r"large language model", r"generative ai", r"\bgenai\b",
+    r"nlp", r"natural language processing",
+    # Applied/research roles
+    r"applied scientist", r"research engineer", r"research scientist",
+    r"applied ai", r"applied ml",
+    # Adjacent
+    r"computer vision", r"data scientist", r"mlops",
+    r"prompt engineer", r"ai research",
 ]
 
+pattern = re.compile("|".join(TITLE_KEYWORDS), re.IGNORECASE)
 
 def title_matches(title: str) -> bool:
-    title_lower = title.lower()
-    return any(keyword in title_lower for keyword in TARGET_TITLE_KEYWORDS)
+    return bool(pattern.search(title))
