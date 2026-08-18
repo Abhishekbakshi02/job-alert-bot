@@ -12,7 +12,7 @@ CLASSIFY_MAX_TOKENS = 1000
 
 from llm_client import call_llm, CLASSIFY_PROVIDERS
 
-MAX_JOBS_PER_BATCH = 3
+MAX_JOBS_PER_BATCH = 1
 
 BATCH_PROMPT_TEMPLATE = """You are screening {count} job postings against two STRICT requirements. Respond using ONLY a JSON array, no other text before or after it - one object per job, IN THE SAME ORDER as given below.
 
