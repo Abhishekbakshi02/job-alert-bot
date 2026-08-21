@@ -2476,5 +2476,341 @@
   {
     "name": "Kpowermanagementservices",
     "url": "https://jobs.smartrecruiters.com/kpowermanagementservices"
+  },
+  {
+    "name": "Monzo",
+    "url": "https://boards.greenhouse.io/monzo"
+  },
+  {
+    "name": "Virtru",
+    "url": "https://boards.greenhouse.io/virtru"
+  },
+  {
+    "name": "Arize AI",
+    "url": "https://boards.greenhouse.io/arizeai"
+  },
+  {
+    "name": "Smartsheet Prospects",
+    "url": "https://boards.greenhouse.io/prospects"
+  },
+  {
+    "name": "Monks",
+    "url": "https://boards.greenhouse.io/monks"
+  },
+  {
+    "name": "Legion Intelligence",
+    "url": "https://boards.greenhouse.io/yurtsai"
+  },
+  {
+    "name": "Roadie",
+    "url": "https://boards.greenhouse.io/roadie"
+  },
+  {
+    "name": "Phantom",
+    "url": "https://jobs.ashbyhq.com/phantom"
+  },
+  {
+    "name": "Solidgate",
+    "url": "https://jobs.ashbyhq.com/solidgate"
+  },
+  {
+    "name": "Rula",
+    "url": "https://jobs.ashbyhq.com/rula"
+  },
+  {
+    "name": "Enode",
+    "url": "https://jobs.ashbyhq.com/enode"
+  },
+  {
+    "name": "Neuroscale",
+    "url": "https://jobs.ashbyhq.com/neuroscale"
+  },
+  {
+    "name": "Greenlight",
+    "url": "https://jobs.lever.co/greenlight"
+  },
+  {
+    "name": "Ivalua",
+    "url": "https://boards.greenhouse.io/ivalua"
+  },
+  {
+    "name": "Isee",
+    "url": "https://jobs.lever.co/isee"
+  },
+  {
+    "name": "Zinnia - Employee Referral",
+    "url": "https://boards.greenhouse.io/zind-erprogram"
+  },
+  {
+    "name": "NICE",
+    "url": "https://boards.greenhouse.io/nice"
+  },
+  {
+    "name": "Kestra",
+    "url": "https://jobs.ashbyhq.com/kestra"
+  },
+  {
+    "name": "Planet",
+    "url": "https://boards.greenhouse.io/planetlabs"
+  },
+  {
+    "name": "Sourcegraph",
+    "url": "https://boards.greenhouse.io/sourcegraph91"
+  },
+  {
+    "name": "Chainguard",
+    "url": "https://boards.greenhouse.io/chainguard"
+  },
+  {
+    "name": "Alpaca",
+    "url": "https://boards.greenhouse.io/alpaca"
+  },
+  {
+    "name": "Wikimedia Foundation",
+    "url": "https://boards.greenhouse.io/wikimedia"
+  },
+  {
+    "name": "Impact.com",
+    "url": "https://boards.greenhouse.io/impact"
+  },
+  {
+    "name": "Teravision Technologies",
+    "url": "https://boards.greenhouse.io/teravision"
+  },
+  {
+    "name": "Mercury",
+    "url": "https://boards.greenhouse.io/mercury"
+  },
+  {
+    "name": "Constructor",
+    "url": "https://jobs.ashbyhq.com/constructor"
+  },
+  {
+    "name": "Netbird",
+    "url": "https://jobs.ashbyhq.com/netbird"
+  },
+  {
+    "name": "Ambrook",
+    "url": "https://jobs.ashbyhq.com/ambrook"
+  },
+  {
+    "name": "Keycard Labs",
+    "url": "https://jobs.ashbyhq.com/keycard-labs"
+  },
+  {
+    "name": "Kodex",
+    "url": "https://jobs.ashbyhq.com/kodex"
+  },
+  {
+    "name": "Aiwyn",
+    "url": "https://jobs.ashbyhq.com/aiwyn"
+  },
+  {
+    "name": "Higharc",
+    "url": "https://jobs.ashbyhq.com/higharc"
+  },
+  {
+    "name": "Welltheory",
+    "url": "https://jobs.ashbyhq.com/welltheory"
+  },
+  {
+    "name": "Xero",
+    "url": "https://jobs.ashbyhq.com/xero"
+  },
+  {
+    "name": "Clera",
+    "url": "https://jobs.ashbyhq.com/clera"
+  },
+  {
+    "name": "Mazehq",
+    "url": "https://jobs.ashbyhq.com/mazehq"
+  },
+  {
+    "name": "Bedrock Robotics",
+    "url": "https://jobs.ashbyhq.com/bedrock-robotics"
+  },
+  {
+    "name": "Sixt",
+    "url": "https://jobs.smartrecruiters.com/sixt"
+  },
+  {
+    "name": "Miratech1",
+    "url": "https://jobs.smartrecruiters.com/miratech1"
+  },
+  {
+    "name": "WorldQuant",
+    "url": "https://boards.greenhouse.io/worldquant"
+  },
+  {
+    "name": "Protolabs",
+    "url": "https://jobs.lever.co/protolabs"
+  },
+  {
+    "name": "Sprymethods",
+    "url": "https://jobs.lever.co/sprymethods"
+  },
+  {
+    "name": "Sumundi",
+    "url": "https://jobs.smartrecruiters.com/sumundi"
+  },
+  {
+    "name": "Version1",
+    "url": "https://jobs.smartrecruiters.com/version1"
+  },
+  {
+    "name": "Appliedcloudcomputing",
+    "url": "https://jobs.smartrecruiters.com/appliedcloudcomputing"
+  },
+  {
+    "name": "Konovo",
+    "url": "https://boards.greenhouse.io/konovo"
+  },
+  {
+    "name": "New Era Technology",
+    "url": "https://boards.greenhouse.io/neweratech"
+  },
+  {
+    "name": "Innodata Inc.",
+    "url": "https://boards.greenhouse.io/innodatainc"
+  },
+  {
+    "name": "Enterpret",
+    "url": "https://boards.greenhouse.io/enterpret"
+  },
+  {
+    "name": "Celonis",
+    "url": "https://boards.greenhouse.io/celonis"
+  },
+  {
+    "name": "Quantiq",
+    "url": "https://boards.greenhouse.io/quantiq"
+  },
+  {
+    "name": "Outpost",
+    "url": "https://jobs.ashbyhq.com/outpost"
+  },
+  {
+    "name": "Adelphi Ai",
+    "url": "https://jobs.ashbyhq.com/adelphi-ai"
+  },
+  {
+    "name": "Xplor",
+    "url": "https://jobs.smartrecruiters.com/xplor"
+  },
+  {
+    "name": "Renterra",
+    "url": "https://jobs.ashbyhq.com/renterra"
+  },
+  {
+    "name": "Mercari",
+    "url": "https://apply.workable.com/mercari"
+  },
+  {
+    "name": "European Dynamics",
+    "url": "https://apply.workable.com/european-dynamics"
+  },
+  {
+    "name": "V4c",
+    "url": "https://apply.workable.com/v4c"
+  },
+  {
+    "name": "Weekday 1",
+    "url": "https://apply.workable.com/weekday-1"
+  },
+  {
+    "name": "Bertelsmann Jobs",
+    "url": "https://jobs.smartrecruiters.com/bertelsmann-jobs"
+  },
+  {
+    "name": "Dev2",
+    "url": "https://jobs.smartrecruiters.com/dev2"
+  },
+  {
+    "name": "Nagarro1",
+    "url": "https://jobs.smartrecruiters.com/nagarro1"
+  },
+  {
+    "name": "Prosidianconsulting",
+    "url": "https://jobs.smartrecruiters.com/prosidianconsulting"
+  },
+  {
+    "name": "Systabuildsoftwaregroup",
+    "url": "https://jobs.smartrecruiters.com/systabuildsoftwaregroup"
+  },
+  {
+    "name": "Liftedanupworkcompany",
+    "url": "https://jobs.smartrecruiters.com/liftedanupworkcompany"
+  },
+  {
+    "name": "Devoteam",
+    "url": "https://jobs.smartrecruiters.com/devoteam"
+  },
+  {
+    "name": "Warren",
+    "url": "https://jobs.ashbyhq.com/warren"
+  },
+  {
+    "name": "Jobsforhumanity",
+    "url": "https://jobs.smartrecruiters.com/jobsforhumanity"
+  },
+  {
+    "name": "Endeavoritsolution",
+    "url": "https://jobs.smartrecruiters.com/endeavoritsolution"
+  },
+  {
+    "name": "Aecom2",
+    "url": "https://jobs.smartrecruiters.com/aecom2"
+  },
+  {
+    "name": "Satispay",
+    "url": "https://jobs.ashbyhq.com/satispay"
+  },
+  {
+    "name": "Chaingpt",
+    "url": "https://apply.workable.com/chaingpt"
+  },
+  {
+    "name": "Lucidya",
+    "url": "https://apply.workable.com/lucidya"
+  },
+  {
+    "name": "Canals",
+    "url": "https://jobs.ashbyhq.com/canals"
+  },
+  {
+    "name": "Getsubstance",
+    "url": "https://apply.workable.com/getsubstance"
+  },
+  {
+    "name": "Lockwood",
+    "url": "https://apply.workable.com/lockwood"
+  },
+  {
+    "name": "StarTree",
+    "url": "https://boards.greenhouse.io/startree"
+  },
+  {
+    "name": "Lumanu",
+    "url": "https://jobs.ashbyhq.com/lumanu"
+  },
+  {
+    "name": "Webleetechnologies",
+    "url": "https://jobs.smartrecruiters.com/webleetechnologies"
+  },
+  {
+    "name": "Capgemini Insurance",
+    "url": "https://apply.workable.com/capgemini-insurance"
+  },
+  {
+    "name": "YipitData (Alternative)",
+    "url": "https://boards.greenhouse.io/yipitdatajobs"
+  },
+  {
+    "name": "Endeavoritsolution10",
+    "url": "https://jobs.smartrecruiters.com/endeavoritsolution10"
+  },
+  {
+    "name": "2070health",
+    "url": "https://apply.workable.com/2070health"
   }
 ]
