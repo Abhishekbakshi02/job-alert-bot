@@ -18,7 +18,7 @@ CONTENT_TRUNCATE_CHARS = 12000  # generous now that each call only holds 1 job
 
 BATCH_PROMPT_TEMPLATE = """You are screening {count} job posting(s) against STRICT requirements. Read the ENTIRE job description below carefully before deciding - requirements are often stated later in the posting (e.g. in a "Qualifications" section), not just in the title or opening paragraph. Respond using ONLY a JSON array, no other text before or after it - one object per job, IN THE SAME ORDER as given below.
 
-Requirement 1 (Experience): the role must be for freshers / entry-level / early-career candidates with 0-2 years of professional experience (0 or 1 years are acceptable). Scan the WHOLE description for ANY stated years-of-experience requirement, wherever it appears. Reject the role if:
+Requirement 1 (Experience): the role must be for freshers / entry-level / early-career candidates with 0-2 years of professional experience (0 or 1 years are acceptable). Scan the WHOLE description for ANY stated years-of-experience requirement, wherever it appears. If NO job experience requirement is mentioned ANYWHERE throughout the whole description, ACCEPT the role and include that company as well. Reject the role if:
   - it asks for MORE than 2 years of experience, stated ANYWHERE in the posting (e.g. "3+ years", "5+ years", "minimum 4 years") - even if the title itself doesn't say "Senior"
   - the title contains "Senior", "Staff", "Lead", "Principal", "Manager", "Director", or similar seniority indicators
   - it is an internship / intern position
