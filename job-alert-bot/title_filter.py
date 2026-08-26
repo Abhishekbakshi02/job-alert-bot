@@ -1,21 +1,33 @@
-import re
+"""
+Shared title-matching logic used by every platform-specific fetcher.
+Two layers: a positive list (role must match one of these) and an
+exclusion list (reject immediately regardless of positive matches) -
+the exclusions are enforced here, deterministically, rather than left
+to the AI classifier to catch every time. Cheaper (no wasted API call)
+and more reliable (not dependent on model judgment) for categories that
+are almost always identifiable from the title alone.
+"""
 
-TITLE_KEYWORDS = [
-    # Core ML/AI
-    r"machine learning", r"\bml\b", r"artificial intelligence", r"\bai\b",
-    r"deep learning", r"neural network",
-    # LLM/GenAI specific
-    r"\bllm\b", r"large language model", r"generative ai", r"\bgenai\b",
-    r"nlp", r"natural language processing",
-    # Applied/research roles
-    r"applied scientist", r"research engineer", r"research scientist",
-    r"applied ai", r"applied ml",
-    # Adjacent
-    r"computer vision", r"data scientist", r"mlops",
-    r"prompt engineer", r"ai research",
+TARGET_TITLE_KEYWORDS = [
+    "machine learning engineer",
+    "ml engineer",
+    "ai engineer",
+    "llm engineer",
+    "applied ai",
+    "applied ml",
 ]
 
-pattern = re.compile("|".join(TITLE_KEYWORDS), re.IGNORECASE)
+EXCLUDED_TITLE_KEYWORDS = [
+    "intern",
+    "internship",
+    "voice trainer",
+    "ai trainer",
+    "data trainer",
+]
+
 
 def title_matches(title: str) -> bool:
-    return bool(pattern.search(title))
+    title_lower = title.lower()
+    if any(excluded in title_lower for excluded in EXCLUDED_TITLE_KEYWORDS):
+        return False
+    return any(keyword in title_lower for keyword in TARGET_TITLE_KEYWORDS)
