@@ -56,10 +56,6 @@
     "url": "https://jobs.lever.co/h1"
   },
   {
-    "name": "Plaid",
-    "url": "https://jobs.lever.co/plaid"
-  },
-  {
     "name": "Vercel",
     "url": "https://job-boards.greenhouse.io/vercel"
   },
@@ -836,10 +832,6 @@
   {
     "name": "Madecard",
     "url": "https://jobs.ashbyhq.com/madecard"
-  },
-  {
-    "name": "Tolken",
-    "url": "https://jobs.ashbyhq.com/tolken"
   },
   {
     "name": "Demandbase",
@@ -3649,9 +3641,24 @@
     "name": "Skysun 4",
     "url": "https://apply.workable.com/skysun-4"
   },
-  { "name": "Glance", "url": "https://job-boards.greenhouse.io/glance" },
-  { "name": "Thoughtworks", "url": "https://job-boards.greenhouse.io/thoughtworks" },
-  { "name": "Netlify", "url": "https://job-boards.greenhouse.io/netlify" },
-  { "name": "Collabora", "url": "https://jobs.lever.co/collabora" },
-  { "name": "Ubisoft", "url": "https://jobs.smartrecruiters.com/Ubisoft2" }
+  {
+    "name": "Glance",
+    "url": "https://job-boards.greenhouse.io/glance"
+  },
+  {
+    "name": "Thoughtworks",
+    "url": "https://job-boards.greenhouse.io/thoughtworks"
+  },
+  {
+    "name": "Netlify",
+    "url": "https://job-boards.greenhouse.io/netlify"
+  },
+  {
+    "name": "Collabora",
+    "url": "https://jobs.lever.co/collabora"
+  },
+  {
+    "name": "Ubisoft",
+    "url": "https://jobs.smartrecruiters.com/Ubisoft2"
+  }
 ]
