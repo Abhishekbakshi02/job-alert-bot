@@ -3757,5 +3757,24 @@
     "name": "Kamikai",
     "url": "https://jobs.ashbyhq.com/ami"
   },
-  
+  {
+    "name": "PayPay",
+    "url": "https://job-boards.greenhouse.io/paypay"
+  },
+  {
+    "name": "Wizcorp",
+    "url": "https://job-boards.greenhouse.io/wizprivate"
+  },
+  {
+    "name": "PayPay Card Corporation",
+    "url": "https://job-boards.greenhouse.io/paypaycard"
+  },
+  {
+    "name": "Zeals",
+    "url": "https://job-boards.greenhouse.io/zeals"
+  },
+  {
+    "name": "Rapyuta Robotics",
+    "url": "https://apply.workable.com/rapyuta-robotics"
+  }
 ]
