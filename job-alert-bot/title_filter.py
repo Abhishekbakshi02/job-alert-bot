@@ -15,6 +15,7 @@ TARGET_TITLE_KEYWORDS = [
     "llm engineer",
     "applied ai",
     "applied ml",
+    "AI Systems Engineer"
 ]
 
 EXCLUDED_TITLE_KEYWORDS = [
