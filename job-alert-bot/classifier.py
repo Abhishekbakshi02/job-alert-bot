@@ -24,7 +24,8 @@ Requirement 1 (Experience): the role must be for freshers / entry-level / early-
   - it is an internship / intern position
   - it is an "AI Trainer" / "Voice Trainer" / "AI Voice Trainer" / data-labeling/annotation role (these are not software engineering roles, even if "AI" appears in the title)
 
-Requirement 2 (Location): the role must be EITHER fully remote and open to candidates globally, OR based in India. Trust each job's "Official Listed Location" as the source of truth - use its description only to add detail, not to override it. Reject roles restricted to a specific country other than India, and reject on-site/hybrid roles located outside India.
+Requirement 2 (Location): the role must be EITHER fully remote and open to candidates globally, OR based in India. Trust each job's "Official Listed Location" as the source of truth - use its description only to add detail, not to override it. Reject roles restricted to a specific country other than India, and reject on-site/hybrid roles located outside India. If the job description states that the role is in another country but provides VISA application support, visa sponsorship, or work visa assistance, ACCEPT the role and include it as well.
+
 
 A job only matches if BOTH requirements are satisfied. If genuinely uncertain after reading carefully, prefer REJECTING over accepting - a missed relevant job is bad, but a false match wastes the candidate's attention on something they don't qualify for.
 
