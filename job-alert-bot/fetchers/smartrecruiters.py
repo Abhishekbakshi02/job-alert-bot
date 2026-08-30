@@ -5,6 +5,11 @@ SmartRecruiters exposes a free, public, no-auth Posting API:
 Full descriptions need one extra call per posting (only done for actual
 title-matches, to keep this efficient):
     GET https://api.smartrecruiters.com/v1/companies/{company_id}/postings/{posting_id}
+
+IMPORTANT: the "ref" field on a posting is a link to SmartRecruiters'
+internal API (raw JSON, not a browsable page) - confirmed via their own
+official docs example. It must NEVER be used as the link shown to the
+user. postingUrl / applyUrl / jobAdUrl are the real public-facing pages.
 """
 
 import requests
@@ -23,10 +28,15 @@ def fetch_smartrecruiters_jobs(company_id: str) -> list[dict]:
         city = location.get("city", "")
         country = location.get("country", "")
         location_name = ", ".join(p for p in (city, country) if p) or "Not specified"
+
+        # Deliberately does NOT include "ref" - that field is an internal
+        # API URL, not a public page. See module docstring.
+        public_url = job.get("postingUrl") or job.get("applyUrl") or job.get("jobAdUrl") or ""
+
         normalized.append({
             "title": job.get("name", ""),
             "location": {"name": location_name},
-            "absolute_url": job.get("ref", "") or job.get("applyUrl", ""),
+            "absolute_url": public_url,
             "content": "",
             "_id": job.get("id", ""),
         })
@@ -44,7 +54,7 @@ def _fetch_description(company_id: str, posting_id: str) -> str:
 
 def find_candidate_jobs(company_id: str) -> list[dict]:
     all_jobs = fetch_smartrecruiters_jobs(company_id)
-    candidates = [job for job in all_jobs if title_matches(job["title"])]
+    candidates = [job for job in all_jobs if title_matches(job["title"]) and job["absolute_url"]]
 
     for job in candidates:
         try:
