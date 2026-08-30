@@ -4524,5 +4524,45 @@
   {
     "name": "10a Labs",
     "url": "https://job-boards.greenhouse.io/10alabs"
+  },
+  {
+    "name": "in-tech",
+    "url": "https://jobs.ashbyhq.com/PrimeIntellect"
+  },
+  {
+    "name": "T4R Labs",
+    "url": "https://jobs.ashbyhq.com/fundamentalresearchlabs"
+  },
+  {
+    "name": "Katalyst",
+    "url": "https://job-boards.greenhouse.io/katalyst"
+  },
+  {
+    "name": "Mintlify",
+    "url": "https://jobs.ashbyhq.com/Mintlify"
+  },
+  {
+    "name": "Arcade",
+    "url": "https://jobs.ashbyhq.com/arcade"
+  },
+  {
+    "name": "Maple",
+    "url": "https://jobs.ashbyhq.com/maple"
+  },
+  {
+    "name": "Neural Magic",
+    "url": "https://apply.workable.com/neural-magic"
+  },
+  {
+    "name": "Adept",
+    "url": "https://apply.workable.com/adept-staffing"
+  },
+  {
+    "name": "Cohere Health",
+    "url": "https://job-boards.greenhouse.io/coherehealth"
+  },
+  {
+    "name": "Unbox Robotics",
+    "url": "https://jobs.ashbyhq.com/unboxrobotics"
   }
 ]
