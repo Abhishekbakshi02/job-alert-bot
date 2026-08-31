@@ -1,6 +1,5 @@
 import re
 
-
 TARGET_TITLE_PATTERNS = [
     # AI / ML Engineering
     r"\bmachine[\s-]+learning engineer\b",
@@ -8,12 +7,13 @@ TARGET_TITLE_PATTERNS = [
     r"\bartificial intelligence engineer\b",
     r"\bai engineer\b",
 
+    # Software Engineering
     r"\bsoftware developer\b",
-    r"\bSDE\b",
+    r"\bsde\b",
     r"\bsde1\b",
-    r"\bFDE\b",
+    r"\bfde\b",
     r"\bforward deployment engineer\b",
-    r"\bPython engineer\b",
+    r"\bpython engineer\b",
     r"\bpython developer\b",
     r"\bsoftware engineer\b",
     r"\bsoftware engineer 1\b",
@@ -81,7 +81,6 @@ TARGET_TITLE_PATTERNS = [
     r"\bmachine learning solutions engineer\b",
 ]
 
-
 EXCLUDED_TITLE_PATTERNS = [
     r"\bintern\b",
     r"\binternship\b",
@@ -89,7 +88,9 @@ EXCLUDED_TITLE_PATTERNS = [
     r"\bai trainer\b",
     r"\bdata trainer\b",
     r"\bsenior\b",
-    
+    r"\bstaff\b",
+    r"\bprincipal\b",
+    r"\bplatform\b",
 ]
 
 
@@ -100,5 +101,5 @@ def title_matches(title: str) -> bool:
     if any(re.search(pattern, title_lower) for pattern in EXCLUDED_TITLE_PATTERNS):
         return False
 
-    # Check target roles
+    # Accept target roles
     return any(re.search(pattern, title_lower) for pattern in TARGET_TITLE_PATTERNS)
