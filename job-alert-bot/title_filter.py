@@ -15,6 +15,8 @@ TARGET_TITLE_PATTERNS = [
     r"\bforward deployment engineer\b",
     r"\bPython engineer\b",
     r"\bpython developer\b",
+    r"\bsoftware engineer\b",
+    r"\bsoftware engineer 1\b",
 
     # Applied AI / ML
     r"\bapplied (?:ai|ml|machine learning)\b",
