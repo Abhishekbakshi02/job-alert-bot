@@ -89,9 +89,7 @@ EXCLUDED_TITLE_PATTERNS = [
     r"\bai trainer\b",
     r"\bdata trainer\b",
     r"\bsenior\b",
-    r"\staff\b",
-    r"\platform\b",
-    r"\principal\b"
+    
 ]
 
 
