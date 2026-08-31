@@ -91,7 +91,7 @@ EXCLUDED_TITLE_PATTERNS = [
     r"\bsenior\b",
     r"\staff\b",
     r"\platform\b",
-    r"\principal\b",
+    r"\principal\b"
 ]
 
 
