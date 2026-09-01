@@ -5062,10 +5062,6 @@
     "url": "https://jobs.ashbyhq.com/periodic-labs"
   },
   {
-    "name": "Binks",
-    "url": "https://jobs.ashbyhq.com/binks"
-  },
-  {
     "name": "Helloverify",
     "url": "https://jobs.ashbyhq.com/ello"
   },
@@ -5114,16 +5110,8 @@
     "url": "https://jobs.ashbyhq.com/aim"
   },
   {
-    "name": "Airbank",
-    "url": "https://jobs.ashbyhq.com/air"
-  },
-  {
     "name": "AirGarage",
     "url": "https://jobs.ashbyhq.com/airgarage"
-  },
-  {
-    "name": "AirTreks",
-    "url": "https://jobs.ashbyhq.com/air"
   },
   {
     "name": "Alami",
@@ -5156,10 +5144,6 @@
   {
     "name": "apartment therapy",
     "url": "https://jobs.ashbyhq.com/grow-therapy"
-  },
-  {
-    "name": "argyle",
-    "url": "https://jobs.ashbyhq.com/argyle"
   },
   {
     "name": "ARK",
@@ -5296,10 +5280,6 @@
   {
     "name": "Celsius",
     "url": "https://apply.workable.com/celsius"
-  },
-  {
-    "name": "Chainlink Labs",
-    "url": "https://jobs.ashbyhq.com/chainlink-labs"
   },
   {
     "name": "Chargify",
@@ -5448,13 +5428,5 @@
   {
     "name": "FactorialHR",
     "url": "https://apply.workable.com/factorialhr"
-  },
-  {
-    "name": "Faithlife",
-    "url": "https://apply.workable.com/oops"
-  },
-  {
-    "name": "Fauna",
-    "url": "https://jobs.ashbyhq.com/fauna-robotics"
   }
 ]
