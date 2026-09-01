@@ -87,6 +87,7 @@ EXCLUDED_TITLE_PATTERNS = [
     r"\bvoice trainer\b",
     r"\bai trainer\b",
     r"\bdata trainer\b",
+    r"\bsr\.\b",
     r"\bsenior\b",
     r"\bstaff\b",
     r"\bprincipal\b",
