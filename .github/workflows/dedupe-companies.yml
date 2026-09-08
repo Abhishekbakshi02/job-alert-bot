@@ -1,0 +1,36 @@
+name: Deduplicate Companies List
+
+on:
+  push:
+    paths:
+      - 'job-alert-bot/companies.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  dedupe:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: job-alert-bot
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Remove duplicate companies
+        run: python3 dedupe_companies.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "job-alert-bot"
+          git config user.email "actions@github.com"
+          git fetch origin main
+          git reset --soft origin/main
+          git add companies.json
+          git diff --quiet --cached || git commit -m "Remove duplicate companies"
+          git push origin main
