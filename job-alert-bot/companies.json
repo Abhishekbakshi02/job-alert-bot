@@ -5782,20 +5782,12 @@
     "url": "https://job-boards.greenhouse.io/zenrows"
   },
   {
-    "name": "Camunda",
-    "url": "https://apply.workable.com/camunda"
-  },
-  {
     "name": "Fleetio",
     "url": "https://job-boards.greenhouse.io/fleetio"
   },
   {
     "name": "Webflow",
     "url": "https://job-boards.greenhouse.io/webflow"
-  },
-  {
-    "name": "Docker",
-    "url": "https://jobs.ashbyhq.com/docker"
   },
   {
     "name": "Stedi",
@@ -5814,14 +5806,6 @@
     "url": "https://jobs.ashbyhq.com/mural"
   },
   {
-    "name": "JumpCloud",
-    "url": "https://jobs.lever.co/jumpcloud"
-  },
-  {
-    "name": "Awesome Motive",
-    "url": "https://job-boards.greenhouse.io/gomotive"
-  },
-  {
     "name": "The Browser Company",
     "url": "https://jobs.ashbyhq.com/The%20Browser%20Company"
   },
@@ -5834,20 +5818,8 @@
     "url": "https://jobs.lever.co/futureof-life"
   },
   {
-    "name": "StackBlitz",
-    "url": "https://job-boards.greenhouse.io/stackblitz"
-  },
-  {
-    "name": "GR8 Tech",
-    "url": "https://jobs.ashbyhq.com/tldr.tech"
-  },
-  {
     "name": "Trust Wallet",
     "url": "https://jobs.ashbyhq.com/trust-wallet"
-  },
-  {
-    "name": "The Studio",
-    "url": "https://job-boards.greenhouse.io/studiodesigner"
   },
   {
     "name": "Digible",
@@ -5860,14 +5832,6 @@
   {
     "name": "Zeely",
     "url": "https://jobs.ashbyhq.com/zeely"
-  },
-  {
-    "name": "CloudLinux",
-    "url": "https://apply.workable.com/cloudlinux-1"
-  },
-  {
-    "name": "5CA",
-    "url": "https://jobs.ashbyhq.com/ramp"
   },
   {
     "name": "Access Softek",
@@ -5890,10 +5854,6 @@
     "url": "https://job-boards.greenhouse.io/affinidi"
   },
   {
-    "name": "Affinity",
-    "url": "https://jobs.ashbyhq.com/affinity.co"
-  },
-  {
     "name": "Aircall",
     "url": "https://apply.workable.com/aircall"
   },
@@ -5902,16 +5862,8 @@
     "url": "https://jobs.lever.co/airtm"
   },
   {
-    "name": "Aleph",
-    "url": "https://jobs.lever.co/aleph"
-  },
-  {
     "name": "AppMagic",
     "url": "https://job-boards.greenhouse.io/magic"
-  },
-  {
-    "name": "Current",
-    "url": "https://apply.workable.com/careers"
   },
   {
     "name": "Language Services Associates",
@@ -5946,10 +5898,6 @@
     "url": "https://job-boards.greenhouse.io/testlio"
   },
   {
-    "name": "Search Atlas",
-    "url": "https://jobs.ashbyhq.com/atlas"
-  },
-  {
     "name": "Smartsheet",
     "url": "https://job-boards.greenhouse.io/smartsheet"
   },
@@ -5978,24 +5926,12 @@
     "url": "https://jobs.lever.co/happyco/c6af7ba1-8b33-421d-8a44-933807ad67d1"
   },
   {
-    "name": "FINN",
-    "url": "https://jobs.lever.co/finn"
-  },
-  {
     "name": "ODK",
     "url": "https://apply.workable.com/odk-media"
   },
   {
     "name": "Renaissance Philanthropy",
     "url": "https://jobs.ashbyhq.com/renphil"
-  },
-  {
-    "name": "CyberAtlas",
-    "url": "https://jobs.ashbyhq.com/atlas/84b24525-e926-48fd-bb64-ac288a175eaf"
-  },
-  {
-    "name": "Tala",
-    "url": "https://jobs.lever.co/tala"
   },
   {
     "name": "OnTheGoSystems",
@@ -6008,10 +5944,6 @@
   {
     "name": "Zscaler",
     "url": "https://job-boards.greenhouse.io/zscaler"
-  },
-  {
-    "name": "Mactores",
-    "url": "https://jobs.lever.co/mactores"
   },
   {
     "name": "Gismart",
@@ -6126,18 +6058,6 @@
     "url": "https://job-boards.greenhouse.io/beyondfinance"
   },
   {
-    "name": "Bitfinex",
-    "url": "https://jobs.ashbyhq.com/fin"
-  },
-  {
-    "name": "Runway",
-    "url": "https://jobs.ashbyhq.com/runway-ml"
-  },
-  {
-    "name": "Harvey",
-    "url": "https://jobs.ashbyhq.com/harvey"
-  },
-  {
     "name": "Crisp Recruit",
     "url": "https://job-boards.greenhouse.io/crisprecruit"
   },
@@ -6230,10 +6150,6 @@
     "url": "https://jobs.ashbyhq.com/scalemath"
   },
   {
-    "name": "Plus AI",
-    "url": "https://jobs.ashbyhq.com/openai"
-  },
-  {
     "name": "CINC Systems",
     "url": "https://apply.workable.com/cinc-systems"
   },
@@ -6242,36 +6158,8 @@
     "url": "https://jobs.ashbyhq.com/DubClub"
   },
   {
-    "name": "Stratos Group",
-    "url": "https://job-boards.greenhouse.io/stratainformationgroup"
-  },
-  {
-    "name": "PrismWorks AI",
-    "url": "https://jobs.ashbyhq.com/openai"
-  },
-  {
-    "name": "Lunar Launch Labs",
-    "url": "https://jobs.ashbyhq.com/lunar"
-  },
-  {
     "name": "Cloudiway",
     "url": "https://job-boards.greenhouse.io/66degrees/jobs/5746817004"
-  },
-  {
-    "name": "InData Labs",
-    "url": "https://jobs.ashbyhq.com/category-labs"
-  },
-  {
-    "name": "Opflio Labs",
-    "url": "https://jobs.ashbyhq.com/oplabs"
-  },
-  {
-    "name": "CreativeTech Labs",
-    "url": "https://jobs.ashbyhq.com/elevenlabs"
-  },
-  {
-    "name": "Atom Partners",
-    "url": "https://jobs.ashbyhq.com/atomic"
   },
   {
     "name": "Clearer",
@@ -6302,10 +6190,6 @@
     "url": "https://job-boards.greenhouse.io/bitreactor"
   },
   {
-    "name": "Counterpart",
-    "url": "https://job-boards.greenhouse.io/relaypro"
-  },
-  {
     "name": "Ritual",
     "url": "https://job-boards.greenhouse.io/ritual"
   },
@@ -6322,31 +6206,7 @@
     "url": "https://jobs.ashbyhq.com/DoubleZero"
   },
   {
-    "name": "Genki",
-    "url": "https://apply.workable.com/staygenki"
-  },
-  {
-    "name": "Jito Foundation",
-    "url": "https://jobs.lever.co/jito"
-  },
-  {
-    "name": "Nomina",
-    "url": "https://jobs.lever.co/nominal"
-  },
-  {
     "name": "Skift",
     "url": "https://job-boards.greenhouse.io/retailinsights/jobs/6482956003"
-  },
-  {
-    "name": "Dante Labs",
-    "url": "https://jobs.ashbyhq.com/category-labs"
-  },
-  {
-    "name": "Bespoke Analytics",
-    "url": "https://jobs.ashbyhq.com/bespokelabs"
-  },
-  {
-    "name": "FinoSync",
-    "url": "https://jobs.ashbyhq.com/fin"
   }
 ]
