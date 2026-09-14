@@ -6378,10 +6378,6 @@
     "url": "https://jobs.smartrecruiters.com/REDICASystems/744000034619217-data-solutions-coordinator-"
   },
   {
-    "name": "REVERONIX",
-    "url": "https://jobs.ashbyhq.com/rev"
-  },
-  {
     "name": "Impetus",
     "url": "https://apply.workable.com/impetus-systems"
   },
@@ -6392,10 +6388,6 @@
   {
     "name": "Point72",
     "url": "https://job-boards.greenhouse.io/point72/jobs/7820104002"
-  },
-  {
-    "name": "Salvo Software",
-    "url": "https://apply.workable.com/salvo-software"
   },
   {
     "name": "Oliver Wyman",
@@ -6450,10 +6442,6 @@
     "url": "https://job-boards.greenhouse.io/amtechsoftware"
   },
   {
-    "name": "Brillio",
-    "url": "https://jobs.lever.co/brillio-2"
-  },
-  {
     "name": "Iris Software",
     "url": "https://job-boards.greenhouse.io/iris"
   },
@@ -6462,32 +6450,8 @@
     "url": "https://jobs.ashbyhq.com/onsiteIQ"
   },
   {
-    "name": "Composio",
-    "url": "https://jobs.ashbyhq.com/composio"
-  },
-  {
-    "name": "Amgen",
-    "url": "https://jobs.smartrecruiters.com/Amgen3/744000018026035-specialty-rep-amgen-sales-entry-program"
-  },
-  {
-    "name": "Visa",
-    "url": "https://jobs.smartrecruiters.com/Visa/744000077205830-director-commercial-sales-executive"
-  },
-  {
-    "name": "Workday",
-    "url": "https://jobs.ashbyhq.com/ramp"
-  },
-  {
-    "name": "S&P Global",
-    "url": "https://jobs.ashbyhq.com/the-global-talent-co"
-  },
-  {
     "name": "Equifax",
     "url": "https://jobs.ashbyhq.com/equi"
-  },
-  {
-    "name": "The UrbanIndia",
-    "url": "https://jobs.lever.co/jobgether"
   },
   {
     "name": "Genios",
@@ -6498,16 +6462,8 @@
     "url": "https://jobs.smartrecruiters.com/RecrosoftTechnologies/743999729598606-frontend-developer"
   },
   {
-    "name": "Sonata Software",
-    "url": "https://jobs.ashbyhq.com/sona"
-  },
-  {
     "name": "OutcomesAI",
     "url": "https://jobs.lever.co/outcomesai"
-  },
-  {
-    "name": "FICO",
-    "url": "https://jobs.lever.co/jobgether"
   },
   {
     "name": "Kotak Mahindra Bank",
@@ -6518,20 +6474,12 @@
     "url": "https://job-boards.greenhouse.io/adswerveinc/jobs/5086746007"
   },
   {
-    "name": "Infosys Finacle",
-    "url": "https://jobs.ashbyhq.com/fin"
-  },
-  {
     "name": "Cisco",
     "url": "https://job-boards.greenhouse.io/pagerduty/jobs/6006378004"
   },
   {
     "name": "Accenture",
     "url": "https://job-boards.greenhouse.io/afscareersmarketplace/jobs/4706249006"
-  },
-  {
-    "name": "Deloitte",
-    "url": "https://job-boards.greenhouse.io/relaypro"
   },
   {
     "name": "Swiggy",
@@ -6550,10 +6498,6 @@
     "url": "https://job-boards.greenhouse.io/dwelly"
   },
   {
-    "name": "Rapinno Tech",
-    "url": "https://jobs.ashbyhq.com/tldr.tech"
-  },
-  {
     "name": "NucleusTeq",
     "url": "https://apply.workable.com/nucleus"
   },
@@ -6566,35 +6510,7 @@
     "url": "https://jobs.smartrecruiters.com/PrecisionTechnologies1/82162601-business-analyst"
   },
   {
-    "name": "Welo Data",
-    "url": "https://jobs.lever.co/weloglobal"
-  },
-  {
     "name": "J&J",
     "url": "https://job-boards.greenhouse.io/jjsnackfoods"
-  },
-  {
-    "name": "Protolabs",
-    "url": "https://jobs.lever.co/protolabs"
-  },
-  {
-    "name": "Smarsh",
-    "url": "https://jobs.lever.co/smarsh"
-  },
-  {
-    "name": "Nightfall",
-    "url": "https://jobs.ashbyhq.com/nightfall-ai"
-  },
-  {
-    "name": "Arkose Labs",
-    "url": "https://job-boards.greenhouse.io/arkoselabs"
-  },
-  {
-    "name": "Jumio",
-    "url": "https://job-boards.greenhouse.io/jumio"
-  },
-  {
-    "name": "JumpCloud",
-    "url": "https://jobs.lever.co/jumpcloud"
   }
 ]
