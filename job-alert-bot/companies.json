@@ -7174,16 +7174,8 @@
     "url": "https://jobs.ashbyhq.com/llamaindex"
   },
   {
-    "name": "Runway",
-    "url": "https://jobs.ashbyhq.com/runway-ml"
-  },
-  {
     "name": "Jasper",
     "url": "https://jobs.ashbyhq.com/Jasper%20AI"
-  },
-  {
-    "name": "Anysphere",
-    "url": "https://jobs.ashbyhq.com/sphere"
   },
   {
     "name": "Codeium",
@@ -7214,20 +7206,12 @@
     "url": "https://job-boards.greenhouse.io/wasabi"
   },
   {
-    "name": "Bunny.net",
-    "url": "https://apply.workable.com/bunnystudio"
-  },
-  {
     "name": "Teleport",
     "url": "https://apply.workable.com/teleport-careers"
   },
   {
     "name": "Pulumi",
     "url": "https://job-boards.greenhouse.io/pulumicorporation"
-  },
-  {
-    "name": "Wiz",
-    "url": "https://job-boards.greenhouse.io/wizprivate"
   },
   {
     "name": "Drata",
@@ -7250,10 +7234,6 @@
     "url": "https://job-boards.greenhouse.io/iterable"
   },
   {
-    "name": "Attentive",
-    "url": "https://job-boards.greenhouse.io/attentive"
-  },
-  {
     "name": "Substack",
     "url": "https://jobs.ashbyhq.com/substack"
   },
@@ -7268,10 +7248,6 @@
   {
     "name": "Thinkific",
     "url": "https://jobs.ashbyhq.com/thinkific"
-  },
-  {
-    "name": "Front",
-    "url": "https://apply.workable.com/careers"
   },
   {
     "name": "Superhuman",
@@ -7306,14 +7282,6 @@
     "url": "https://apply.workable.com/sinch"
   },
   {
-    "name": "Bird",
-    "url": "https://job-boards.greenhouse.io/bird"
-  },
-  {
-    "name": "Daily.co",
-    "url": "https://apply.workable.com/careers"
-  },
-  {
     "name": "Agora",
     "url": "https://jobs.ashbyhq.com/agora"
   },
@@ -7324,18 +7292,6 @@
   {
     "name": "Wistia",
     "url": "https://jobs.ashbyhq.com/wistia/"
-  },
-  {
-    "name": "Riverside",
-    "url": "https://jobs.ashbyhq.com/river"
-  },
-  {
-    "name": "Descript",
-    "url": "https://jobs.smartrecruiters.com/Dev2/"
-  },
-  {
-    "name": "Rev",
-    "url": "https://jobs.lever.co/lever"
   },
   {
     "name": "Stytch",
@@ -7362,20 +7318,12 @@
     "url": "https://jobs.ashbyhq.com/hexa"
   },
   {
-    "name": "Mode",
-    "url": "https://jobs.ashbyhq.com/notable"
-  },
-  {
     "name": "Sigma Computing",
     "url": "https://job-boards.greenhouse.io/sigmacomputing/jobs/"
   },
   {
     "name": "ThoughtSpot",
     "url": "https://job-boards.greenhouse.io/fleetio/jobs/"
-  },
-  {
-    "name": "Domo",
-    "url": "https://job-boards.greenhouse.io/scaleai"
   },
   {
     "name": "Dataiku",
@@ -7386,24 +7334,12 @@
     "url": "https://jobs.ashbyhq.com/casium"
   },
   {
-    "name": "H2O.ai",
-    "url": "https://job-boards.greenhouse.io/scaleai"
-  },
-  {
     "name": "Labelbox",
     "url": "https://job-boards.greenhouse.io/labelbox"
   },
   {
     "name": "Snorkel AI",
     "url": "https://job-boards.greenhouse.io/snorkelai/jobs"
-  },
-  {
-    "name": "Appen",
-    "url": "https://apply.workable.com/careers"
-  },
-  {
-    "name": "Toloka",
-    "url": "https://apply.workable.com/toloka-ai"
   },
   {
     "name": "Surge AI",
@@ -7450,10 +7386,6 @@
     "url": "https://job-boards.greenhouse.io/dagger"
   },
   {
-    "name": "StackBlitz",
-    "url": "https://job-boards.greenhouse.io/stackblitz"
-  },
-  {
     "name": "Observable",
     "url": "https://jobs.lever.co/observablehq"
   },
@@ -7462,16 +7394,8 @@
     "url": "https://jobs.ashbyhq.com/Deno/"
   },
   {
-    "name": "Ionic",
-    "url": "https://jobs.lever.co/ion"
-  },
-  {
     "name": "Builder.io",
     "url": "https://job-boards.greenhouse.io/builder"
-  },
-  {
-    "name": "Maze",
-    "url": "https://jobs.ashbyhq.com/mazehq"
   },
   {
     "name": "Dovetail",
@@ -7482,10 +7406,6 @@
     "url": "https://job-boards.greenhouse.io/flex/jobs/"
   },
   {
-    "name": "Re:amaze",
-    "url": "https://apply.workable.com/careers"
-  },
-  {
     "name": "Botpress",
     "url": "https://apply.workable.com/botpress"
   },
@@ -7494,16 +7414,8 @@
     "url": "https://jobs.ashbyhq.com/Rasa"
   },
   {
-    "name": "Observe.AI",
-    "url": "https://job-boards.greenhouse.io/scaleai"
-  },
-  {
     "name": "Speechmatics",
     "url": "https://job-boards.greenhouse.io/Speechmatics"
-  },
-  {
-    "name": "Lilt",
-    "url": "https://jobs.ashbyhq.com/lilt-corporate"
   },
   {
     "name": "AI21 Labs",
