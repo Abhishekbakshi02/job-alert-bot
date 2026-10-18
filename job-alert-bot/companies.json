@@ -6934,20 +6934,8 @@
     "url": "https://apply.workable.com/virtusa-polaris"
   },
   {
-    "name": "Mercari, Inc.",
-    "url": "https://apply.workable.com/mercari/"
-  },
-  {
     "name": "NavaSys Technologies",
     "url": "https://job-boards.greenhouse.io/navtechnologies"
-  },
-  {
-    "name": "Bosch",
-    "url": "https://jobs.smartrecruiters.com/Dev2"
-  },
-  {
-    "name": "Citi",
-    "url": "https://jobs.ashbyhq.com/ashby"
   },
   {
     "name": "Easemytrip",
@@ -6958,32 +6946,8 @@
     "url": "https://jobs.lever.co/fi"
   },
   {
-    "name": "Go Digit General Insurance",
-    "url": "https://job-boards.greenhouse.io/digit"
-  },
-  {
     "name": "Hiring Mavericks",
     "url": "https://jobs.ashbyhq.com/mavericks"
-  },
-  {
-    "name": "NTT Ltd",
-    "url": "https://jobs.ashbyhq.com/ashby"
-  },
-  {
-    "name": "Quest Global",
-    "url": "https://jobs.ashbyhq.com/the-global-talent-co"
-  },
-  {
-    "name": "RecruitBots AI",
-    "url": "https://job-boards.greenhouse.io/scaleai"
-  },
-  {
-    "name": "TE Connectivity",
-    "url": "https://jobs.ashbyhq.com/tldr.tech"
-  },
-  {
-    "name": "Thrifty AI",
-    "url": "https://job-boards.greenhouse.io/scaleai"
   },
   {
     "name": "WNS",
@@ -6998,32 +6962,12 @@
     "url": "https://job-boards.greenhouse.io/zam"
   },
   {
-    "name": "Zealant Consulting Group",
-    "url": "https://jobs.ashbyhq.com/alan"
-  },
-  {
     "name": "Toptal",
     "url": "https://jobs.lever.co/toptal"
   },
   {
-    "name": "37signals",
-    "url": "https://apply.workable.com/37signals"
-  },
-  {
     "name": "Kit (ConvertKit)",
     "url": "https://apply.workable.com/convertkit"
-  },
-  {
-    "name": "Remote",
-    "url": "https://jobs.smartrecruiters.com/Dev2/"
-  },
-  {
-    "name": "Deel",
-    "url": "https://jobs.ashbyhq.com/deel"
-  },
-  {
-    "name": "Oyster",
-    "url": "https://jobs.ashbyhq.com/oyster/"
   },
   {
     "name": "Postman",
@@ -7044,10 +6988,6 @@
   {
     "name": "Loom",
     "url": "https://apply.workable.com/loom-solar"
-  },
-  {
-    "name": "jumio",
-    "url": "https://job-boards.greenhouse.io/jumio"
   },
   {
     "name": "Intercom",
@@ -7074,10 +7014,6 @@
     "url": "https://jobs.ashbyhq.com/snowflake/"
   },
   {
-    "name": "Cockroach Labs",
-    "url": "https://jobs.ashbyhq.com/periodic-labs"
-  },
-  {
     "name": "PlanetScale",
     "url": "https://job-boards.greenhouse.io/planetscale"
   },
@@ -7086,28 +7022,12 @@
     "url": "https://job-boards.greenhouse.io/proton"
   },
   {
-    "name": "SUSE",
-    "url": "https://jobs.ashbyhq.com/ashby"
-  },
-  {
     "name": "Medium",
     "url": "https://job-boards.greenhouse.io/medium"
   },
   {
-    "name": "Fiverr",
-    "url": "https://jobs.lever.co/fi"
-  },
-  {
     "name": "Wise",
     "url": "https://jobs.smartrecruiters.com/Wise"
-  },
-  {
-    "name": "Revolut",
-    "url": "https://jobs.ashbyhq.com/rev"
-  },
-  {
-    "name": "Scale AI",
-    "url": "https://job-boards.greenhouse.io/scaleai"
   },
   {
     "name": "Gitpod",
@@ -7146,14 +7066,6 @@
     "url": "https://job-boards.greenhouse.io/lanternstudiosinc/jobs/"
   },
   {
-    "name": "Genesys",
-    "url": "https://jobs.smartrecruiters.com/Visa/"
-  },
-  {
-    "name": "Zoom",
-    "url": "https://jobs.ashbyhq.com/composio"
-  },
-  {
     "name": "Box",
     "url": "https://job-boards.greenhouse.io/boxinc"
   },
@@ -7170,24 +7082,12 @@
     "url": "https://jobs.ashbyhq.com/maintainx"
   },
   {
-    "name": "Workday",
-    "url": "https://jobs.ashbyhq.com/ramp"
-  },
-  {
     "name": "Coursera",
-    "url": "https://job-boards.greenhouse.io/coursera"
-  },
-  {
-    "name": "Udemy",
     "url": "https://job-boards.greenhouse.io/coursera"
   },
   {
     "name": "Khan Academy",
     "url": "https://job-boards.greenhouse.io/khanacademy"
-  },
-  {
-    "name": "Evernote",
-    "url": "https://job-boards.greenhouse.io/ever"
   },
   {
     "name": "Monday.com",
@@ -7196,10 +7096,6 @@
   {
     "name": "Wrike",
     "url": "https://job-boards.greenhouse.io/wrike/jobs/"
-  },
-  {
-    "name": "Zoho",
-    "url": "https://apply.workable.com/huzzle/"
   },
   {
     "name": "Lucid Software",
@@ -7214,20 +7110,8 @@
     "url": "https://job-boards.greenhouse.io/prisma6"
   },
   {
-    "name": "Neon",
-    "url": "https://jobs.ashbyhq.com/Neon"
-  },
-  {
     "name": "Meilisearch",
     "url": "https://apply.workable.com/meilisearch"
-  },
-  {
-    "name": "Bugsnag",
-    "url": "https://jobs.ashbyhq.com/zip"
-  },
-  {
-    "name": "Rollbar",
-    "url": "https://job-boards.greenhouse.io/affirm"
   },
   {
     "name": "LogRocket",
@@ -7260,13 +7144,5 @@
   {
     "name": "Culture Amp",
     "url": "https://job-boards.greenhouse.io/cultureamp"
-  },
-  {
-    "name": "Lever",
-    "url": "https://jobs.lever.co/lever"
-  },
-  {
-    "name": "Ashby",
-    "url": "https://jobs.ashbyhq.com/ashby"
   }
 ]
