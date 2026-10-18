@@ -7138,10 +7138,6 @@
     "url": "https://job-boards.greenhouse.io/cultureamp"
   },
   {
-    "name": "Timescale",
-    "url": "https://jobs.ashbyhq.com/timescale/"
-  },
-  {
     "name": "Couchbase",
     "url": "https://job-boards.greenhouse.io/couchbaseinc"
   },
@@ -7176,10 +7172,6 @@
   {
     "name": "Jasper",
     "url": "https://jobs.ashbyhq.com/Jasper%20AI"
-  },
-  {
-    "name": "Codeium",
-    "url": "https://jobs.ashbyhq.com/codeium/"
   },
   {
     "name": "Lightning AI",
@@ -7280,10 +7272,6 @@
   {
     "name": "Sinch",
     "url": "https://apply.workable.com/sinch"
-  },
-  {
-    "name": "Agora",
-    "url": "https://jobs.ashbyhq.com/agora"
   },
   {
     "name": "Mux",
@@ -7388,10 +7376,6 @@
   {
     "name": "Observable",
     "url": "https://jobs.lever.co/observablehq"
-  },
-  {
-    "name": "Deno",
-    "url": "https://jobs.ashbyhq.com/Deno/"
   },
   {
     "name": "Builder.io",
