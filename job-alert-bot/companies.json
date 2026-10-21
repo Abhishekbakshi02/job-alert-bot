@@ -7414,22 +7414,6 @@
     "url": "https://jobs.ashbyhq.com/magic.dev"
   },
   {
-    "name": "Timescale",
-    "url": "https://jobs.ashbyhq.com/timescale/"
-  },
-  {
-    "name": "Codeium",
-    "url": "https://jobs.ashbyhq.com/codeium/"
-  },
-  {
-    "name": "Agora",
-    "url": "https://jobs.ashbyhq.com/agora"
-  },
-  {
-    "name": "Deno",
-    "url": "https://jobs.ashbyhq.com/Deno/"
-  },
-  {
     "name": "OKX",
     "url": "https://job-boards.greenhouse.io/okx"
   },
@@ -7452,10 +7436,6 @@
   {
     "name": "Alchemy",
     "url": "https://jobs.ashbyhq.com/alchemy"
-  },
-  {
-    "name": "Chainlink Labs",
-    "url": "https://jobs.ashbyhq.com/chainlink-labs"
   },
   {
     "name": "Polygon Labs",
@@ -7566,10 +7546,6 @@
     "url": "https://jobs.ashbyhq.com/teamworks"
   },
   {
-    "name": "Nutanix",
-    "url": "https://jobs.ashbyhq.com/nutanix"
-  },
-  {
     "name": "Pure Storage",
     "url": "https://job-boards.greenhouse.io/purestorage"
   },
@@ -7580,14 +7556,6 @@
   {
     "name": "Spinny",
     "url": "https://job-boards.greenhouse.io/spin"
-  },
-  {
-    "name": "boAt",
-    "url": "https://jobs.ashbyhq.com/Boatsetter/"
-  },
-  {
-    "name": "Porter",
-    "url": "https://jobs.ashbyhq.com/mach/"
   },
   {
     "name": "Pocket FM",
@@ -7612,14 +7580,6 @@
   {
     "name": "n8n",
     "url": "https://jobs.ashbyhq.com/n8n"
-  },
-  {
-    "name": "Census",
-    "url": "https://jobs.ashbyhq.com/census/"
-  },
-  {
-    "name": "Appsmith",
-    "url": "https://jobs.ashbyhq.com/appsmith/"
   },
   {
     "name": "Materialize",
