@@ -7413,393 +7413,21 @@
     "name": "Magic.dev",
     "url": "https://jobs.ashbyhq.com/magic.dev"
   },
-   {
+  {
     "name": "Timescale",
     "url": "https://jobs.ashbyhq.com/timescale/"
-  },
-  {
-    "name": "Couchbase",
-    "url": "https://job-boards.greenhouse.io/couchbaseinc"
-  },
-  {
-    "name": "Yugabyte",
-    "url": "https://job-boards.greenhouse.io/yugabyte"
-  },
-  {
-    "name": "Starburst",
-    "url": "https://job-boards.greenhouse.io/starburst"
-  },
-  {
-    "name": "Qdrant",
-    "url": "https://jobs.ashbyhq.com/qdrant.tech"
-  },
-  {
-    "name": "Pinecone",
-    "url": "https://jobs.ashbyhq.com/pinecone"
-  },
-  {
-    "name": "Weaviate",
-    "url": "https://jobs.ashbyhq.com/weaviate"
-  },
-  {
-    "name": "LangChain",
-    "url": "https://jobs.ashbyhq.com/langchain"
-  },
-  {
-    "name": "LlamaIndex",
-    "url": "https://jobs.ashbyhq.com/llamaindex"
-  },
-  {
-    "name": "Runway",
-    "url": "https://jobs.ashbyhq.com/runway-ml"
-  },
-  {
-    "name": "Jasper",
-    "url": "https://jobs.ashbyhq.com/Jasper%20AI"
-  },
-  {
-    "name": "Anysphere",
-    "url": "https://jobs.ashbyhq.com/sphere"
   },
   {
     "name": "Codeium",
     "url": "https://jobs.ashbyhq.com/codeium/"
   },
   {
-    "name": "Lightning AI",
-    "url": "https://job-boards.greenhouse.io/lightningai"
-  },
-  {
-    "name": "Lambda",
-    "url": "https://jobs.ashbyhq.com/Lambda"
-  },
-  {
-    "name": "CoreWeave",
-    "url": "https://job-boards.greenhouse.io/weave"
-  },
-  {
-    "name": "Scaleway",
-    "url": "https://jobs.lever.co/scaleway"
-  },
-  {
-    "name": "Backblaze",
-    "url": "https://job-boards.greenhouse.io/backblaze"
-  },
-  {
-    "name": "Wasabi",
-    "url": "https://job-boards.greenhouse.io/wasabi"
-  },
-  {
-    "name": "Bunny.net",
-    "url": "https://apply.workable.com/bunnystudio"
-  },
-  {
-    "name": "Teleport",
-    "url": "https://apply.workable.com/teleport-careers"
-  },
-  {
-    "name": "Pulumi",
-    "url": "https://job-boards.greenhouse.io/pulumicorporation"
-  },
-  {
-    "name": "Wiz",
-    "url": "https://job-boards.greenhouse.io/wizprivate"
-  },
-  {
-    "name": "Drata",
-    "url": "https://jobs.ashbyhq.com/drata"
-  },
-  {
-    "name": "Secureframe",
-    "url": "https://jobs.ashbyhq.com/secureframe/"
-  },
-  {
-    "name": "Tines",
-    "url": "https://job-boards.greenhouse.io/tines"
-  },
-  {
-    "name": "Braze",
-    "url": "https://job-boards.greenhouse.io/braze"
-  },
-  {
-    "name": "Iterable",
-    "url": "https://job-boards.greenhouse.io/iterable"
-  },
-  {
-    "name": "Attentive",
-    "url": "https://job-boards.greenhouse.io/attentive"
-  },
-  {
-    "name": "Substack",
-    "url": "https://jobs.ashbyhq.com/substack"
-  },
-  {
-    "name": "Patreon",
-    "url": "https://jobs.ashbyhq.com/patreon"
-  },
-  {
-    "name": "Teachable",
-    "url": "https://job-boards.greenhouse.io/teachablecareers"
-  },
-  {
-    "name": "Thinkific",
-    "url": "https://jobs.ashbyhq.com/thinkific"
-  },
-  {
-    "name": "Front",
-    "url": "https://apply.workable.com/careers"
-  },
-  {
-    "name": "Superhuman",
-    "url": "https://jobs.ashbyhq.com/Superhuman%20Platform%20Inc"
-  },
-  {
-    "name": "Fastmail",
-    "url": "https://apply.workable.com/fastmail-1"
-  },
-  {
-    "name": "Surfshark",
-    "url": "https://jobs.ashbyhq.com/surfshark"
-  },
-  {
-    "name": "Gorgias",
-    "url": "https://jobs.ashbyhq.com/gorgias"
-  },
-  {
-    "name": "Kustomer",
-    "url": "https://jobs.ashbyhq.com/kustomer"
-  },
-  {
-    "name": "Dixa",
-    "url": "https://apply.workable.com/dixa"
-  },
-  {
-    "name": "Bandwidth",
-    "url": "https://job-boards.greenhouse.io/bandwidth/jobs"
-  },
-  {
-    "name": "Sinch",
-    "url": "https://apply.workable.com/sinch"
-  },
-  {
-    "name": "Bird",
-    "url": "https://job-boards.greenhouse.io/bird"
-  },
-  {
-    "name": "Daily.co",
-    "url": "https://apply.workable.com/careers"
-  },
-  {
     "name": "Agora",
     "url": "https://jobs.ashbyhq.com/agora"
   },
   {
-    "name": "Mux",
-    "url": "https://jobs.ashbyhq.com/mux"
-  },
-  {
-    "name": "Wistia",
-    "url": "https://jobs.ashbyhq.com/wistia/"
-  },
-  {
-    "name": "Riverside",
-    "url": "https://jobs.ashbyhq.com/river"
-  },
-  {
-    "name": "Descript",
-    "url": "https://jobs.smartrecruiters.com/Dev2/"
-  },
-  {
-    "name": "Rev",
-    "url": "https://jobs.lever.co/lever"
-  },
-  {
-    "name": "Stytch",
-    "url": "https://jobs.ashbyhq.com/stytch"
-  },
-  {
-    "name": "WorkOS",
-    "url": "https://jobs.ashbyhq.com/workos"
-  },
-  {
-    "name": "FusionAuth",
-    "url": "https://jobs.ashbyhq.com/bunch/"
-  },
-  {
-    "name": "CyberArk",
-    "url": "https://jobs.smartrecruiters.com/Cyberark1/"
-  },
-  {
-    "name": "Tenable",
-    "url": "https://job-boards.greenhouse.io/tenableinc"
-  },
-  {
-    "name": "Hex",
-    "url": "https://jobs.ashbyhq.com/hexa"
-  },
-  {
-    "name": "Mode",
-    "url": "https://jobs.ashbyhq.com/notable"
-  },
-  {
-    "name": "Sigma Computing",
-    "url": "https://job-boards.greenhouse.io/sigmacomputing/jobs/"
-  },
-  {
-    "name": "ThoughtSpot",
-    "url": "https://job-boards.greenhouse.io/fleetio/jobs/"
-  },
-  {
-    "name": "Domo",
-    "url": "https://job-boards.greenhouse.io/scaleai"
-  },
-  {
-    "name": "Dataiku",
-    "url": "https://job-boards.greenhouse.io/dataiku"
-  },
-  {
-    "name": "DataRobot",
-    "url": "https://jobs.ashbyhq.com/casium"
-  },
-  {
-    "name": "H2O.ai",
-    "url": "https://job-boards.greenhouse.io/scaleai"
-  },
-  {
-    "name": "Labelbox",
-    "url": "https://job-boards.greenhouse.io/labelbox"
-  },
-  {
-    "name": "Snorkel AI",
-    "url": "https://job-boards.greenhouse.io/snorkelai/jobs"
-  },
-  {
-    "name": "Appen",
-    "url": "https://apply.workable.com/careers"
-  },
-  {
-    "name": "Toloka",
-    "url": "https://apply.workable.com/toloka-ai"
-  },
-  {
-    "name": "Surge AI",
-    "url": "https://jobs.ashbyhq.com/surge-ai"
-  },
-  {
-    "name": "Invisible Technologies",
-    "url": "https://job-boards.greenhouse.io/invisibletech"
-  },
-  {
-    "name": "TELUS International",
-    "url": "https://apply.workable.com/telus-4"
-  },
-  {
-    "name": "Smartling",
-    "url": "https://job-boards.greenhouse.io/smartling"
-  },
-  {
-    "name": "Phrase",
-    "url": "https://jobs.ashbyhq.com/phrase/"
-  },
-  {
-    "name": "Unbabel",
-    "url": "https://apply.workable.com/unbabel"
-  },
-  {
-    "name": "DeepL",
-    "url": "https://jobs.ashbyhq.com/DeepL"
-  },
-  {
-    "name": "Sprout Social",
-    "url": "https://job-boards.greenhouse.io/sproutsocialcollege"
-  },
-  {
-    "name": "Hootsuite",
-    "url": "https://job-boards.greenhouse.io/hootsuite"
-  },
-  {
-    "name": "Semaphore",
-    "url": "https://apply.workable.com/semaphore"
-  },
-  {
-    "name": "Dagger",
-    "url": "https://job-boards.greenhouse.io/dagger"
-  },
-  {
-    "name": "StackBlitz",
-    "url": "https://job-boards.greenhouse.io/stackblitz"
-  },
-  {
-    "name": "Observable",
-    "url": "https://jobs.lever.co/observablehq"
-  },
-  {
     "name": "Deno",
     "url": "https://jobs.ashbyhq.com/Deno/"
-  },
-  {
-    "name": "Ionic",
-    "url": "https://jobs.lever.co/ion"
-  },
-  {
-    "name": "Builder.io",
-    "url": "https://job-boards.greenhouse.io/builder"
-  },
-  {
-    "name": "Maze",
-    "url": "https://jobs.ashbyhq.com/mazehq"
-  },
-  {
-    "name": "Dovetail",
-    "url": "https://jobs.ashbyhq.com/dovetail"
-  },
-  {
-    "name": "Crisp",
-    "url": "https://job-boards.greenhouse.io/flex/jobs/"
-  },
-  {
-    "name": "Re:amaze",
-    "url": "https://apply.workable.com/careers"
-  },
-  {
-    "name": "Botpress",
-    "url": "https://apply.workable.com/botpress"
-  },
-  {
-    "name": "Rasa",
-    "url": "https://jobs.ashbyhq.com/Rasa"
-  },
-  {
-    "name": "Observe.AI",
-    "url": "https://job-boards.greenhouse.io/scaleai"
-  },
-  {
-    "name": "Speechmatics",
-    "url": "https://job-boards.greenhouse.io/Speechmatics"
-  },
-  {
-    "name": "Lilt",
-    "url": "https://jobs.ashbyhq.com/lilt-corporate"
-  },
-  {
-    "name": "AI21 Labs",
-    "url": "https://job-boards.greenhouse.io/haizelabs/jobs/"
-  },
-  {
-    "name": "Character.AI",
-    "url": "https://jobs.ashbyhq.com/character"
-  },
-  {
-    "name": "Midjourney",
-    "url": "https://jobs.ashbyhq.com/midjourney"
-  },
-  {
-    "name": "Poolside",
-    "url": "https://jobs.ashbyhq.com/poolside/"
-  },
-  {
-    "name": "Magic.dev",
-    "url": "https://jobs.ashbyhq.com/magic.dev"
   },
   {
     "name": "OKX",
@@ -7858,10 +7486,6 @@
     "url": "https://job-boards.greenhouse.io/bamboohr17/jobs/"
   },
   {
-    "name": "Workable",
-    "url": "https://apply.workable.com/careers"
-  },
-  {
     "name": "Oscar Health",
     "url": "https://job-boards.greenhouse.io/oscar"
   },
@@ -7906,16 +7530,8 @@
     "url": "https://jobs.lever.co/matchgroup"
   },
   {
-    "name": "Booking.com",
-    "url": "https://jobs.ashbyhq.com/kraken.com"
-  },
-  {
     "name": "Uber",
     "url": "https://job-boards.greenhouse.io/uberfreight"
-  },
-  {
-    "name": "Oura",
-    "url": "https://job-boards.greenhouse.io/oura"
   },
   {
     "name": "Whoop",
@@ -7958,24 +7574,12 @@
     "url": "https://job-boards.greenhouse.io/purestorage"
   },
   {
-    "name": "Bill.com",
-    "url": "https://jobs.ashbyhq.com/hcompany"
-  },
-  {
-    "name": "Digit Insurance",
-    "url": "https://job-boards.greenhouse.io/digit"
-  },
-  {
     "name": "Cars24",
     "url": "https://apply.workable.com/cars24"
   },
   {
     "name": "Spinny",
     "url": "https://job-boards.greenhouse.io/spin"
-  },
-  {
-    "name": "OYO",
-    "url": "https://job-boards.greenhouse.io/oura"
   },
   {
     "name": "boAt",
@@ -8024,10 +7628,6 @@
   {
     "name": "ClickHouse",
     "url": "https://jobs.ashbyhq.com/clickhouse"
-  },
-  {
-    "name": "Imply",
-    "url": "https://jobs.ashbyhq.com/ramp"
   },
   {
     "name": "Zilliz",
@@ -8088,13 +7688,5 @@
   {
     "name": "Zed Industries",
     "url": "https://jobs.ashbyhq.com/zedfinancial"
-  },
-  {
-    "name": "Height",
-    "url": "https://jobs.ashbyhq.com/ashby"
-  },
-  {
-    "name": "Cal.com",
-    "url": "https://jobs.ashbyhq.com/Commure"
   }
 ]
