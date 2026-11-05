@@ -41,10 +41,10 @@ GROQ = {
     "model": "openai/gpt-oss-120b",
 }
 NEMOTRON = {
-    "name": "Nemotron",
+    "name": "Nemotron Ultra",
     "url": "https://integrate.api.nvidia.com/v1/chat/completions",
     "api_key_env": "NVIDIA_API_KEY",
-    "model": "nvidia/nemotron-3-super-120b-a12b",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
 }
 
 # Gemini deliberately excluded here - reserved for resume tailoring only.
@@ -88,8 +88,14 @@ def _call_one_provider(provider: dict, prompt: str, max_retries: int, max_tokens
                   f"waiting {wait_seconds}s (retry {attempt + 1}/{max_retries})")
             time.sleep(wait_seconds)
             continue
+        try:
+          response.raise_for_status()
+        except requests.exceptions.HTTPError as e:
+          details = response.text[:500]
+          raise GeminiUnavailable(
+              f"{provider['name']}: HTTP {response.status_code}: {details}"
+          ) from e
 
-        response.raise_for_status()
         return response.json()["choices"][0]["message"]["content"]
 
     raise GeminiUnavailable(f"{provider['name']} failed after {max_retries} retries")
