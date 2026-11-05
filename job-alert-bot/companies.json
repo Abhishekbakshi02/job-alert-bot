@@ -7634,10 +7634,6 @@
     "url": "https://job-boards.greenhouse.io/engine"
   },
   {
-    "name": "Fauna",
-    "url": "https://jobs.ashbyhq.com/fauna-robotics"
-  },
-  {
     "name": "Formstack",
     "url": "https://jobs.ashbyhq.com/Intellistack/"
   },
@@ -7682,20 +7678,12 @@
     "url": "https://job-boards.greenhouse.io/instead"
   },
   {
-    "name": "Iterative",
-    "url": "https://jobs.ashbyhq.com/iterative"
-  },
-  {
     "name": "Jitera",
     "url": "https://apply.workable.com/jitera"
   },
   {
     "name": "Kaggle",
     "url": "https://job-boards.greenhouse.io/kaggle"
-  },
-  {
-    "name": "Komoot",
-    "url": "https://apply.workable.com/oops"
   },
   {
     "name": "LaterPay",
@@ -7834,10 +7822,6 @@
     "url": "https://jobs.lever.co/veeva/"
   },
   {
-    "name": "Flatiron Health",
-    "url": "https://job-boards.greenhouse.io/"
-  },
-  {
     "name": "Doximity",
     "url": "https://job-boards.greenhouse.io/doximity"
   },
@@ -7916,10 +7900,6 @@
   {
     "name": "Roam Research",
     "url": "https://jobs.ashbyhq.com/tryroam/"
-  },
-  {
-    "name": "Tana",
-    "url": "https://jobs.lever.co/tsmg"
   },
   {
     "name": "Matter",
