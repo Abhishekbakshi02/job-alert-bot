@@ -82,6 +82,21 @@ For each selected project:
 
 Include a project-specific `techStack` field containing a comma-separated list of only the tools and technologies mentioned in the knowledge base for that project. Do not create a separate tech stack section.
 
+**Tech Stack extraction — IMPORTANT:**
+
+Do not rely only on the dedicated "Tech Stack" field in the project knowledge base.
+
+Extract the tech stack by examining the entire project description, including its title, bullets, implementation details, and any separate technology references.
+
+- Identify all explicitly mentioned programming languages, frameworks, libraries, APIs, platforms, services, and relevant technologies.
+- If the dedicated Tech Stack field says "See project description", is empty, or is missing, extract the technologies directly from the project details.
+- Include technologies that the candidate actually used or integrated, not technologies that are merely related to the project.
+- Do not invent or assume tools based on the nature of the project.
+- Return a comma-separated string.
+- Never leave `techStack` empty when identifiable technologies are present in the project knowledge base.
+
+The dedicated Tech Stack field should be treated as an additional source of information, not the only source.
+
 ## WRITING STYLE — VERY IMPORTANT
 
 The resume must use **simple, clear, natural English**. It should sound like a technically capable person explaining their own work, not an AI generating professional-sounding sentences.
