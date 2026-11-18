@@ -32,7 +32,8 @@ each job's requirements. Built a LaTeX-based PDF rendering pipeline
 using Jinja2 templating with full character-escaping. Implemented
 persistent state tracking to prevent duplicate notifications and
 self-healing removal of dead company URLs. Parallelized company
-fetching for a ~7x speedup. Tech: Python, GitHub Actions, Groq API,
+fetching for a ~7x speedup.
+Tech Stack: Python, GitHub Actions, Groq API,
 Google Gemini API, LaTeX (XeLaTeX), Jinja2, Brevo API, Requests, JSON,
 REST APIs, ThreadPoolExecutor.
 
