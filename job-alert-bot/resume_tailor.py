@@ -112,7 +112,7 @@ For every selected project, generate:
 - `title`: Original project title from the knowledge base.
 - `dates`: Project dates exactly as mentioned in the knowledge base.
 - `bullets`: 5–6 relevant resume-style bullet points.
-- `techStack`: A comma-separated string containing the identifiable technologies used in that project.
+
 
 ## Project bullet requirements
 
